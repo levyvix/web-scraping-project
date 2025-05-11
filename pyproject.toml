@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "loguru>=0.7.3",
+    "pytest>=8.3.5",
     "scrapling>=0.2.99",
     "tqdm>=4.67.1",
 ]
