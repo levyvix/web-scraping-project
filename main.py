@@ -31,14 +31,13 @@ def extract_star_rating(book: Adaptor) -> int:
         int: The star rating (1-5).
     """
     star_class = book.find("p.star-rating")
-    if star_class:
-        star_class = star_class.attrib.get("class", "")
-    else:
+    if not star_class:
         logger.warning("No star rating found for book.")
         return 0
 
-    rating_match = re.search(r"star-rating ([A-Za-z]+)", str(star_class))
+    star_class = star_class.attrib.get("class", "")
 
+    rating_match = re.search(r"star-rating ([A-Za-z]+)", str(star_class))
     if not rating_match:
         return 0
 
@@ -65,6 +64,8 @@ def process_book_listing(book: Adaptor, base_url: str) -> Dict[str, Any]:
         return {}
 
     relative_url = book_url_element.attrib.get("href", "")
+    if "catalogue" not in str(relative_url):
+        relative_url = f"catalogue/{relative_url}"
     book_url = urljoin(base_url, relative_url)
 
     # Extract data from the listing
@@ -76,13 +77,11 @@ def process_book_listing(book: Adaptor, base_url: str) -> Dict[str, Any]:
     price = product_price.text if product_price else ""
 
     # stock available
-    stock = (
-        "".join(
-            book.css(
-                "p.instock.availability::text",
-            )
-        ).strip(),
-    )
+    stock = "".join(
+        book.css(
+            "p.instock.availability::text",
+        )
+    ).strip()
 
     # image url
     image_url = book.find("div.image_container img")
@@ -283,13 +282,15 @@ def main(max_workers: int = 10, max_pages: int = 1) -> None:
             ]
 
             # Process results as they complete
-            page_books = []
+            page_books: list[Dict[str, Any]] = []
             for future in tqdm(
                 concurrent.futures.as_completed(listing_futures),
                 desc=f"Extracting listings from page {page_num}",
                 total=len(books),
             ):
-                page_books.append(future.result())
+                result = future.result()
+                if result:
+                    page_books.append(result)
 
         # Process book details in parallel
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
