@@ -1,9 +1,4 @@
----FILEPATH \README.md
----FIND
-```
-```
----REPLACE
-```
+
 # Running Tests
 
 To run the tests for this project, you can use the following command from the root folder:
@@ -30,4 +25,3 @@ Make sure you have the following installed:
 3. Run the tests using the command mentioned above.
 
 ```
----COMPLETE
