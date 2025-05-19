@@ -5,7 +5,7 @@ A modern web scraping project that demonstrates how to extract book information 
 ## 🚀 Technologies
 
 - **Python 3.10+** - The core programming language
-- **[Scrapling](https://github.com/levy-victor/scrapling)** - A modern, fast, and flexible web scraping library
+- **[Scrapling](https://github.com/levyvix/scrapling)** - A modern, fast, and flexible web scraping library
 - **UV** - A fast Python package installer and resolver
 - **Loguru** - For beautiful and easy logging
 - **tqdm** - For progress bars
@@ -14,7 +14,7 @@ A modern web scraping project that demonstrates how to extract book information 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/web-scraping-project.git
+   git clone https://github.com/levyvix/web-scraping-project.git
    cd web-scraping-project
    ```
 
@@ -46,7 +46,7 @@ A modern web scraping project that demonstrates how to extract book information 
 Run the scraper with default settings (single page, 10 worker threads):
 
 ```bash
-python main.py
+uv run main.py
 ```
 
 ### Advanced Options
@@ -55,29 +55,29 @@ The script supports the following command-line arguments:
 
 - `--threads`: Number of worker threads to use for concurrent scraping (default: 10)
   ```bash
-  python main.py --threads 20
+  uv run main.py --threads 15
   ```
 
 - `--pages`: Maximum number of pages to scrape (default: 1)
   ```bash
-  python main.py --pages 5
+  uv run main.py --pages 5
   ```
 
 ### Examples
 
 1. Scrape 3 pages using 15 worker threads:
    ```bash
-   python main.py --threads 15 --pages 3
+   uv run main.py --threads 15 --pages 3
    ```
 
 2. Scrape just the first page with default settings:
    ```bash
-   python main.py
+   uv run main.py
    ```
 
 3. View help message:
    ```bash
-   python main.py --help
+   uv run main.py --help
    ```
 
 ### Output
@@ -94,7 +94,7 @@ The scraped data will be saved to `books.json` in the project root directory. Th
 
 ## 🔍 About Scrapling
 
-This project uses [Scrapling](https://github.com/levy-victor/scrapling), a modern web scraping library that provides:
+This project uses [Scrapling](https://github.com/levyvix/scrapling), a modern web scraping library that provides:
 
 - Simple and intuitive API
 - Built-in support for modern web technologies
@@ -115,6 +115,42 @@ flowchart TD
     G --> H[Done]
     E --> H
 ```
+
+## 🐛 Debugging with VS Code
+
+This project includes a `.vscode/launch.json` configuration that makes it easy to debug the script with different arguments in VS Code.
+
+### How to Debug with Arguments
+
+1. **Open the Debug Panel**
+   - Click on the "Run and Debug" icon in the VS Code sidebar (or press `Ctrl+Shift+D`).
+
+2. **Select the Debug Configuration**
+   - Choose "Python: main.py com argumentos" from the dropdown at the top of the Debug panel.
+
+3. **Modify Arguments (Optional)**
+   To change the arguments passed to the script during debugging:
+   - Open `.vscode/launch.json`
+   - Locate the `args` array in the configuration
+   - Add, remove, or modify arguments as needed
+   
+   For example, to run with different arguments:
+   ```json
+   "args": ["--threads", "15", "--pages", "3"]
+   ```
+
+4. **Start Debugging**
+   - Click the green play button or press `F5` to start debugging with the specified arguments.
+
+### Common Debugging Scenarios
+
+- **Basic debugging with default arguments**: Just press `F5`
+- **Debug with different thread count**: Modify the `args` in `launch.json` to `["--threads", "5"]`
+- **Debug with multiple pages**: Set arguments to `["--pages", "3"]` to scrape multiple pages
+
+### Breakpoints
+
+You can set breakpoints in your code by clicking in the left margin next to the line numbers. The debugger will pause execution at these points, allowing you to inspect variables and step through your code.
 
 ## 🤝 Contributing
 

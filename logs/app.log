@@ -1,0 +1,10 @@
+2025-05-19 01:21:28 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-05-19 01:21:28 | INFO     | __main__:main:232 - Fetching first page...
+2025-05-19 01:21:29 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-05-19 01:21:29 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-05-19 01:21:29 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-05-19 01:21:29 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-05-19 01:21:30 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-05-19 01:21:30 | INFO     | __main__:main:317 - Total books collected: 20
+2025-05-19 01:21:30 | INFO     | __main__:main:320 - Saving to JSON...
+2025-05-19 01:21:30 | SUCCESS  | __main__:main:323 - Done!

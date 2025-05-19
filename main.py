@@ -1,6 +1,6 @@
 from scrapling.fetchers import Fetcher
 from scrapling.parser import Adaptors, Adaptor
-from loguru import logger
+from utils.logger import logger
 from tqdm import tqdm
 import concurrent.futures
 import re
