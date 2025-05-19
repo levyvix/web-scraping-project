@@ -41,13 +41,56 @@ A modern web scraping project that demonstrates how to extract book information 
 
 ## 🚀 Usage
 
-1. **Run the scraper**
+### Basic Usage
+
+Run the scraper with default settings (single page, 10 worker threads):
+
+```bash
+python main.py
+```
+
+### Advanced Options
+
+The script supports the following command-line arguments:
+
+- `--threads`: Number of worker threads to use for concurrent scraping (default: 10)
+  ```bash
+  python main.py --threads 20
+  ```
+
+- `--pages`: Maximum number of pages to scrape (default: 1)
+  ```bash
+  python main.py --pages 5
+  ```
+
+### Examples
+
+1. Scrape 3 pages using 15 worker threads:
+   ```bash
+   python main.py --threads 15 --pages 3
+   ```
+
+2. Scrape just the first page with default settings:
    ```bash
    python main.py
    ```
 
-2. **Check the output**
-   The scraped data will be saved to `books.json` in the project root.
+3. View help message:
+   ```bash
+   python main.py --help
+   ```
+
+### Output
+
+The scraped data will be saved to `books.json` in the project root directory. The file will contain an array of book objects, each with the following structure:
+
+```json
+{
+  "title": "Book Title",
+  "price": "£10.00",
+  "stock_available": "In stock"
+}
+```
 
 ## 🔍 About Scrapling
 
