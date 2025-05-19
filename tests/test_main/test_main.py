@@ -1,9 +1,16 @@
 import json
 import pathlib
-from main import get_page_url, save_to_json, extract_star_rating, process_book_listing
+from main import (
+    get_page_url,
+    save_to_json,
+    extract_star_rating,
+    process_book_listing,
+    process_book_details,
+)
 from unittest.mock import MagicMock, patch
 
 
+# GET PAGE URL
 def test_get_page_url():
     # Test with a valid URL
     url = "https://example.com"
@@ -15,6 +22,7 @@ def test_get_page_url():
     assert get_page_url(url, 3) == expected_output
 
 
+# SAVE TO JSON
 def test_save_to_json(tmp_path: str):
     # Create a test output directory inside the temporary directory
     test_output_dir = pathlib.Path(tmp_path) / "test_output"
@@ -48,12 +56,30 @@ def test_save_to_json(tmp_path: str):
     assert loaded_custom_data == data
 
 
+# EXTRACT STAR RATING
 def test_extract_star_rating_with_three_stars():
     mock_book = MagicMock()
     mock_book.find.return_value = MagicMock(attrib={"class": "star-rating Three"})
 
     result = extract_star_rating(mock_book)
     assert result == 3
+
+
+def test_book_stars_none():
+    moch_book = MagicMock()
+    moch_book.find.return_value = None
+
+    result = extract_star_rating(moch_book)
+    assert result == 0
+
+
+def test_star_class_invalid_regex():
+    mock_book = MagicMock()
+    star_class_object = MagicMock(attib={"class": "star-rating Invalid"})
+    mock_book.find.return_value = star_class_object
+
+    result = extract_star_rating(mock_book)
+    assert result == 0
 
 
 def test_extract_star_rating_with_four_stars():
@@ -64,6 +90,7 @@ def test_extract_star_rating_with_four_stars():
     assert result == 4
 
 
+# PROCESS BOOK LISTING
 def test_process_book_listing():
     # Create a mock book element that mimics the structure of a book listing
     mock_book = MagicMock()
@@ -122,3 +149,87 @@ def test_process_book_listing():
 
         # Verify extract_star_rating was called with the book
         mock_extract_rating.assert_called_once_with(mock_book)
+
+
+def test_process_book_listing_with_invalid_url():
+    mock_book = MagicMock()
+    mock_book.find.return_value = None
+
+    result = process_book_listing(mock_book, "https://example.com")
+    assert result == {}
+
+
+def test_process_book_listing_with_invalid_image():
+    mock_book = MagicMock()
+
+    # Mock the URL element with href and title attributes
+    url_element = MagicMock()
+    url_element.attrib = {"href": "test-book_1/index.html", "title": "Test Book Title"}
+
+    # Mock the price element
+    price_element = MagicMock()
+    price_element.text = "£19.99"
+
+    # Mock the stock element (using css method)
+    mock_book.css.return_value = [" In stock (20 available) "]
+
+    # Mock the star rating element
+    star_rating = MagicMock()
+    star_rating.attrib = {"class": "star-rating Three"}
+
+    # Set up the mock to return our elements in the correct order
+    mock_book.find.side_effect = [
+        url_element,  # h3 > a (URL element)
+        price_element,  # div.product_price > p.price_color
+        None,
+    ]
+
+    with patch("main.extract_star_rating", return_value=3):
+        result = process_book_listing(mock_book, "https://example.com")
+
+        assert result == {
+            "title": "Test Book Title",
+            "price": "£19.99",
+            "stock_available": "In stock (20 available)",
+            "star_rating": 3,
+            "image_url": "",
+            "detail_url": "https://example.com/catalogue/test-book_1/index.html",
+        }
+
+
+# PROCESS BOOK DETAILS
+def test_process_book_details():
+    test_data = {
+        "title": "Test Book Title",
+        "price": "£19.99",
+        "stock_available": "In stock (20 available)",
+        "star_rating": 3,
+        "image_url": "https://example.com/media/cache/2c/4a/2c4a8fe7b2f4e5d07a0a0b199a7cc372.jpg",
+        "detail_url": "https://example.com/catalogue/test-book_1/index.html",
+    }
+
+    detail_page_mock = MagicMock()
+    detail_page_mock.find_all.return_value = [
+        MagicMock(css=lambda x: MagicMock(text="Test Book Title")),
+        MagicMock(css=lambda x: MagicMock(text="£19.99")),
+        MagicMock(css=lambda x: MagicMock(text="In stock (20 available)")),
+        MagicMock(css=lambda x: MagicMock(text="3")),
+        MagicMock(
+            css=lambda x: MagicMock(
+                text="https://example.com/media/cache/2c/4a/2c4a8fe7b2f4e5d07a0a0b199a7cc372.jpg"
+            )
+        ),
+    ]
+    detail_page_mock.status = 200
+
+    with patch("main.Fetcher.get", return_value=detail_page_mock):
+        result = process_book_details(test_data)
+    assert result == test_data
+
+
+def test_process_book_details_no_detail_url():
+    pass
+
+
+def test_process_book_details_status_not_200():
+    pass

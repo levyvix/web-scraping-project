@@ -11,3 +11,4 @@ wheels/
 *.egg
 # Virtual environments
 .venv
+htmlcov
