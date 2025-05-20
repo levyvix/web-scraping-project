@@ -99,6 +99,46 @@ This project uses [Scrapling](https://github.com/levyvix/scrapling), a modern we
 - Simple and intuitive API
 - Built-in support for modern web technologies
 - Async/await support
+
+## 🧪 Testing and Development
+
+### Setting Up Development Environment
+
+1. Install development dependencies:
+   ```bash
+   uv sync --all-groups
+   ```
+
+   This will install all development tools including pytest and coverage.
+
+### Running Tests with Coverage
+
+To run tests and generate a coverage report:
+
+```bash
+uv run pytest --cov=. --cov-report=html
+```
+
+This command will:
+- Execute all tests in the project
+- Generate code coverage report
+- Create an HTML report in the `htmlcov` directory
+
+You can view the coverage report by opening `htmlcov/index.html` in your web browser.
+
+### Test Coverage Requirements
+
+The project aims for high test coverage. The coverage report will help identify areas of the code that need more test coverage.
+
+## 📝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Please ensure all tests pass and maintain high test coverage before submitting a PR.
 - Built-in rate limiting and retries
 - Support for both CSS and XPath selectors
 
