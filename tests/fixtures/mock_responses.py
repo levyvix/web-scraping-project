@@ -357,3 +357,296 @@ MOCK_SPECIAL_CHARS_DETAIL_PAGE = """
 </body>
 </html>
 """
+
+# Mock response for complete book detail page with all fields present
+MOCK_COMPLETE_DETAIL_PAGE = """
+<!DOCTYPE html>
+<html>
+<head><title>Complete Book | Books to Scrape</title></head>
+<body>
+    <div class="container-fluid page">
+        <div class="page_inner">
+            <ul class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../catalogue/category/books_1/index.html">Books</a></li>
+                <li><a href="../catalogue/category/books/mystery_3/index.html">Mystery</a></li>
+                <li class="active">Complete Book</li>
+            </ul>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div id="product_gallery">
+                        <div id="product_gallery_carousel">
+                            <img id="product_image" src="../../media/cache/complete.jpg" alt="Complete Book">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 product_main">
+                    <h1>Complete Book</h1>
+                    <p class="star-rating Four">
+                        <i class="icon-star"></i>
+                    </p>
+                    <p class="price_color">£35.99</p>
+                    <p class="instock availability">
+                        <i class="icon-ok"></i>
+                        In stock (15 available)
+                    </p>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>UPC</th>
+                            <td>complete123456789</td>
+                        </tr>
+                        <tr>
+                            <th>Product Type</th>
+                            <td>Books</td>
+                        </tr>
+                        <tr>
+                            <th>Price (excl. tax)</th>
+                            <td>£35.99</td>
+                        </tr>
+                        <tr>
+                            <th>Price (incl. tax)</th>
+                            <td>£35.99</td>
+                        </tr>
+                        <tr>
+                            <th>Tax</th>
+                            <td>£0.00</td>
+                        </tr>
+                        <tr>
+                            <th>Availability</th>
+                            <td>In stock (15 available)</td>
+                        </tr>
+                        <tr>
+                            <th>Number of reviews</th>
+                            <td>12</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="sub-header">
+                <h2>Product Description</h2>
+            </div>
+            <div id="product_description" class="sub-header">
+                <h2>Product Description</h2>
+            </div>
+            <p>This is a complete book with all fields present. It has a comprehensive description that includes multiple sentences and provides detailed information about the book's content, themes, and target audience. This description is used to test the complete processing of book detail pages.</p>
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+# Mock response for book detail page with missing description
+MOCK_NO_DESCRIPTION_DETAIL_PAGE = """
+<!DOCTYPE html>
+<html>
+<head><title>No Description Book | Books to Scrape</title></head>
+<body>
+    <div class="container-fluid page">
+        <div class="page_inner">
+            <ul class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../catalogue/category/books_1/index.html">Books</a></li>
+                <li><a href="../catalogue/category/books/romance_8/index.html">Romance</a></li>
+                <li class="active">No Description Book</li>
+            </ul>
+            <div class="row">
+                <div class="col-sm-6 product_main">
+                    <h1>No Description Book</h1>
+                    <p class="star-rating Two">
+                        <i class="icon-star"></i>
+                    </p>
+                    <p class="price_color">£18.50</p>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>UPC</th>
+                            <td>nodesc123</td>
+                        </tr>
+                        <tr>
+                            <th>Product Type</th>
+                            <td>Books</td>
+                        </tr>
+                        <tr>
+                            <th>Price (excl. tax)</th>
+                            <td>£18.50</td>
+                        </tr>
+                        <tr>
+                            <th>Price (incl. tax)</th>
+                            <td>£18.50</td>
+                        </tr>
+                        <tr>
+                            <th>Tax</th>
+                            <td>£0.00</td>
+                        </tr>
+                        <tr>
+                            <th>Availability</th>
+                            <td>In stock (8 available)</td>
+                        </tr>
+                        <tr>
+                            <th>Number of reviews</th>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- Missing product description section entirely -->
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+# Mock response for book detail page with missing category (no breadcrumb)
+MOCK_NO_CATEGORY_DETAIL_PAGE = """
+<!DOCTYPE html>
+<html>
+<head><title>No Category Book | Books to Scrape</title></head>
+<body>
+    <div class="container-fluid page">
+        <div class="page_inner">
+            <!-- Missing breadcrumb navigation -->
+            <div class="row">
+                <div class="col-sm-6 product_main">
+                    <h1>No Category Book</h1>
+                    <p class="star-rating Five">
+                        <i class="icon-star"></i>
+                    </p>
+                    <p class="price_color">£42.00</p>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>UPC</th>
+                            <td>nocat456</td>
+                        </tr>
+                        <tr>
+                            <th>Product Type</th>
+                            <td>Books</td>
+                        </tr>
+                        <tr>
+                            <th>Price (excl. tax)</th>
+                            <td>£42.00</td>
+                        </tr>
+                        <tr>
+                            <th>Price (incl. tax)</th>
+                            <td>£42.00</td>
+                        </tr>
+                        <tr>
+                            <th>Tax</th>
+                            <td>£0.00</td>
+                        </tr>
+                        <tr>
+                            <th>Availability</th>
+                            <td>In stock (5 available)</td>
+                        </tr>
+                        <tr>
+                            <th>Number of reviews</th>
+                            <td>7</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="sub-header">
+                <h2>Product Description</h2>
+            </div>
+            <div id="product_description" class="sub-header">
+                <h2>Product Description</h2>
+            </div>
+            <p>This book has no category information because the breadcrumb navigation is missing.</p>
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+# Mock response for book detail page with malformed product info table
+MOCK_MALFORMED_TABLE_DETAIL_PAGE = """
+<!DOCTYPE html>
+<html>
+<head><title>Malformed Table Book | Books to Scrape</title></head>
+<body>
+    <div class="container-fluid page">
+        <div class="page_inner">
+            <ul class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../catalogue/category/books_1/index.html">Books</a></li>
+                <li><a href="../catalogue/category/books/science_22/index.html">Science</a></li>
+                <li class="active">Malformed Table Book</li>
+            </ul>
+            <div class="row">
+                <div class="col-sm-6 product_main">
+                    <h1>Malformed Table Book</h1>
+                    <p class="star-rating One">
+                        <i class="icon-star"></i>
+                    </p>
+                    <p class="price_color">£28.75</p>
+                    <table class="table table-striped">
+                        <!-- Row with missing th -->
+                        <tr>
+                            <td>malformed789</td>
+                        </tr>
+                        <!-- Row with missing td -->
+                        <tr>
+                            <th>Product Type</th>
+                        </tr>
+                        <!-- Normal row -->
+                        <tr>
+                            <th>Price (excl. tax)</th>
+                            <td>£28.75</td>
+                        </tr>
+                        <!-- Row with extra cells -->
+                        <tr>
+                            <th>Price (incl. tax)</th>
+                            <td>£28.75</td>
+                            <td>Extra cell</td>
+                        </tr>
+                        <!-- Row with empty cells -->
+                        <tr>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                        <!-- Row with only whitespace -->
+                        <tr>
+                            <th>   </th>
+                            <td>   </td>
+                        </tr>
+                        <!-- Valid row at the end -->
+                        <tr>
+                            <th>Number of reviews</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="sub-header">
+                <h2>Product Description</h2>
+            </div>
+            <div id="product_description" class="sub-header">
+                <h2>Product Description</h2>
+            </div>
+            <p>This book has a malformed product information table with missing and extra elements.</p>
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+# Mock response for book detail page with empty/minimal content
+MOCK_MINIMAL_DETAIL_PAGE = """
+<!DOCTYPE html>
+<html>
+<head><title>Minimal Book | Books to Scrape</title></head>
+<body>
+    <div class="container-fluid page">
+        <div class="page_inner">
+            <div class="row">
+                <div class="col-sm-6 product_main">
+                    <h1>Minimal Book</h1>
+                    <!-- No star rating -->
+                    <!-- No price -->
+                    <!-- No product table -->
+                </div>
+            </div>
+            <!-- No description -->
+        </div>
+    </div>
+</body>
+</html>
+"""

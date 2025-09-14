@@ -89,3 +89,120 @@
 2025-09-14 18:00:00 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
 2025-09-14 18:00:00 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
 2025-09-14 18:00:00 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:04:55 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:04:55 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:04:55 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:06:50 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:06:50 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:06:50 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:07:02 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:07:02 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:07:02 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:12:54 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:12:54 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:13:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:13:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:13:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:13:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:13:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:13:59 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:13:59 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:13:59 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:14:00 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
