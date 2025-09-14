@@ -160,10 +160,10 @@ jobs:
       - name: Create build artifacts
         run: |
           mkdir -p build-artifacts
-          cp -r . build-artifacts/
+          # Copy files excluding the build-artifacts directory itself
+          rsync -av --exclude='build-artifacts' --exclude='.git' --exclude='.pytest_cache' --exclude='__pycache__' --exclude='.mypy_cache' --exclude='.ruff_cache' . build-artifacts/
           cd build-artifacts
-          # Remove unnecessary files from artifact
-          rm -rf .git .pytest_cache __pycache__ .mypy_cache .ruff_cache
+          # Clean up any remaining cache files
           find . -name "*.pyc" -delete
           find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 
