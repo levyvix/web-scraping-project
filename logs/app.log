@@ -64,3 +64,28 @@
 2025-05-19 19:58:50 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
 2025-05-19 19:58:50 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
 2025-05-19 19:58:50 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 17:35:55 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 17:35:55 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 17:35:57 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 17:35:57 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 17:35:57 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 17:35:57 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 17:35:58 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 17:35:58 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 17:35:58 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 17:35:58 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 17:46:15 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 17:46:15 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 17:46:15 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 17:46:46 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 17:46:46 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 17:46:46 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 17:53:50 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 17:53:50 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 17:53:50 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 17:59:53 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 17:59:53 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 17:59:53 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:00:00 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:00:00 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:00:00 | WARNING  | main:process_book_listing:93 - No image URL found for book.

@@ -14,3 +14,5 @@ wheels/
 htmlcov
 .ruff_cache
 logs
+*_cache
+.*

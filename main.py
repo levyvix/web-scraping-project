@@ -234,14 +234,14 @@ def main(max_workers: int = 10, max_pages: int = 1) -> None:
 
     if first_page.status != 200:
         logger.error(f"Failed to fetch first page. Status code: {first_page.status}")
-        return
+        raise Exception("Failed to fetch first page")
 
     # Determine total number of pages
     total_pages = get_total_pages(first_page, base_url)
     logger.info(f"Found {total_pages} pages of books")
 
     # Limit pages if max_pages is specified
-    if max_pages and max_pages < total_pages:
+    if max_pages and total_pages > max_pages:
         total_pages = max_pages
         logger.info(f"Limiting to {max_pages} pages as specified")
 
