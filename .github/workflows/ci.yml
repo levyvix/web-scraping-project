@@ -11,10 +11,8 @@ env:
   PYTHON_VERSION_DEFAULT: "3.10"
   UV_CACHE_DIR: ~/.cache/uv
   COVERAGE_THRESHOLD: 80
-  SECURITY_SCAN_LEVEL: "high"
   ARTIFACT_RETENTION_DAYS: 30
   RUFF_IGNORE_RULES: "F401"
-  MYPY_IGNORE_MISSING: true
 
 jobs:
   code-quality:
@@ -50,7 +48,7 @@ jobs:
 
       - name: Run mypy type checking
         run: uv run mypy . --ignore-missing-imports
-        continue-on-error: ${{ env.MYPY_IGNORE_MISSING }}
+        continue-on-error: true
 
   security-scan:
     runs-on: ubuntu-latest
@@ -85,7 +83,7 @@ jobs:
         continue-on-error: true
 
       - name: Upload security report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: security-report
           path: security-report.json
@@ -124,7 +122,7 @@ jobs:
         run: uv run pytest --cov=. --cov-report=html --cov-report=xml --cov-fail-under=${{ env.COVERAGE_THRESHOLD }}
 
       - name: Upload coverage reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report-python-${{ matrix.python-version }}
           path: |
@@ -170,7 +168,7 @@ jobs:
           find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: build-artifacts/
