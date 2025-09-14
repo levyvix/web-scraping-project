@@ -572,6 +572,88 @@ class TestMainFunctionErrorScenarios:
 class TestMainFunctionEdgeCases:
     """Test main function edge cases."""
 
+    def test_books_with_empty_processing_results(
+        self,
+        mock_fetcher_get,
+        mock_save_to_json,
+        mock_logger,
+        mock_tqdm
+    ):
+        """Test handling of books that return empty results from process_book_listing."""
+        # Create mock page with books
+        mock_page = MagicMock()
+        mock_page.status = 200
+        
+        # Mock pagination
+        mock_current_page = MagicMock()
+        mock_current_page.text.strip.return_value = "Page 1 of 1"
+        mock_pager = MagicMock()
+        mock_pager.find.return_value = mock_current_page
+        mock_page.find.return_value = mock_pager
+        
+        # Create mock books - some will return empty results
+        mock_book1 = MagicMock()
+        mock_book2 = MagicMock()
+        mock_book3 = MagicMock()
+        mock_page.find_all.return_value = [mock_book1, mock_book2, mock_book3]
+        
+        mock_fetcher_get.return_value = mock_page
+        
+        # Mock process_book_listing to return mix of valid and empty results
+        with patch('main.process_book_listing') as mock_process_listing:
+            # First book returns valid data, second returns empty dict, third returns valid data
+            mock_process_listing.side_effect = [
+                {"title": "Valid Book 1", "price": "£10.00"},  # Valid result
+                {},  # Empty result (falsy) - this should trigger the missing branch
+                {"title": "Valid Book 2", "price": "£15.00"}   # Valid result
+            ]
+            
+            with patch('main.process_book_details') as mock_process_details:
+                # Only valid books should be processed for details
+                mock_process_details.side_effect = [
+                    {"title": "Valid Book 1", "price": "£10.00", "description": "Desc 1"},
+                    {"title": "Valid Book 2", "price": "£15.00", "description": "Desc 2"}
+                ]
+                
+                with patch('main.concurrent.futures.ThreadPoolExecutor') as mock_executor:
+                    mock_context = MagicMock()
+                    mock_executor.return_value.__enter__.return_value = mock_context
+                    
+                    # Mock futures for listing processing
+                    listing_future1 = MagicMock()
+                    listing_future1.result.return_value = {"title": "Valid Book 1", "price": "£10.00"}
+                    listing_future2 = MagicMock()
+                    listing_future2.result.return_value = {}  # Empty result - triggers missing branch
+                    listing_future3 = MagicMock()
+                    listing_future3.result.return_value = {"title": "Valid Book 2", "price": "£15.00"}
+                    
+                    # Mock futures for detail processing
+                    detail_future1 = MagicMock()
+                    detail_future1.result.return_value = {"title": "Valid Book 1", "price": "£10.00", "description": "Desc 1"}
+                    detail_future2 = MagicMock()
+                    detail_future2.result.return_value = {"title": "Valid Book 2", "price": "£15.00", "description": "Desc 2"}
+                    
+                    # Mock submit to return appropriate futures
+                    mock_context.submit.side_effect = [
+                        listing_future1, listing_future2, listing_future3,  # Listing futures
+                        detail_future1, detail_future2  # Detail futures (only for valid books)
+                    ]
+                    
+                    with patch('main.concurrent.futures.as_completed') as mock_as_completed:
+                        # First call returns listing futures, second call returns detail futures
+                        mock_as_completed.side_effect = [
+                            [listing_future1, listing_future2, listing_future3],  # Listing processing
+                            [detail_future1, detail_future2]  # Detail processing (only valid books)
+                        ]
+                        
+                        main(max_workers=2, max_pages=1)
+        
+        # Verify that only valid books were saved (empty results filtered out)
+        mock_save_to_json.assert_called_once()
+        saved_data = mock_save_to_json.call_args[0][0]
+        assert len(saved_data) == 2  # Only 2 valid books, empty result was filtered out
+        assert all(book.get("title") for book in saved_data)  # All saved books have titles
+
     def test_max_pages_parameter_limiting(
         self,
         mock_fetcher_get,
