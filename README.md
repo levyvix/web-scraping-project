@@ -22,7 +22,7 @@ A modern web scraping project that demonstrates how to extract book information 
    ```bash
    # Install UV if you haven't already
    pip install uv
-   
+
    # Sync dependencies
    uv sync
    ```
@@ -132,7 +132,7 @@ The project aims for high test coverage. The coverage report will help identify 
 
 ## 📝 Contributing
 
-1. Fork the repository
+1. Fork the repository (`git clone https://github.com/levyvix/web-scraping-project.git`)
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
@@ -173,7 +173,7 @@ This project includes a `.vscode/launch.json` configuration that makes it easy t
    - Open `.vscode/launch.json`
    - Locate the `args` array in the configuration
    - Add, remove, or modify arguments as needed
-   
+
    For example, to run with different arguments:
    ```json
    "args": ["--threads", "15", "--pages", "3"]
