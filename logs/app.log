@@ -206,3 +206,1238 @@
 2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
 2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
 2025-09-14 18:14:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:20:23 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:20:23 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:20:23 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:20:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:20:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:24:08 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:24:08 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:24:08 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:24:08 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:24:08 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:24:08 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:24:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:24:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:24:27 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:24:27 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:24:27 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:24:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:24:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:32:44 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:32:44 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:32:44 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:32:45 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:32:45 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:35:11 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:35:11 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:35:11 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:35:11 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:35:11 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 18:35:11 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:35:11 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:35:58 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:35:58 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:35:58 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:35:58 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:35:58 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 18:35:58 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 18:35:58 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 18:35:58 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:35:58 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:04 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:04 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:04 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:36:04 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:36:04 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 18:36:04 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 18:36:04 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 18:36:04 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:36:04 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:09 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:09 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:09 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:36:09 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:36:09 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 18:36:09 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 18:36:09 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 18:36:09 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:36:09 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:09 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:09 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:09 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 18:36:09 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:09 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:09 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:36:09 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:36:09 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 18:36:09 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 18:36:09 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 18:36:09 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:36:09 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:26 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:26 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:26 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:36:26 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:36:26 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 18:36:26 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 18:36:26 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 18:36:26 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:36:26 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:26 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:26 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:26 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 18:36:26 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:26 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:26 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:36:26 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:36:26 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 18:36:26 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 18:36:26 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 18:36:26 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:36:26 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:33 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:33 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:33 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:36:33 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:36:33 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 18:36:33 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 18:36:33 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 18:36:33 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:36:33 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:33 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:33 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:33 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 18:36:33 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:36:33 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:36:33 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:36:33 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:36:33 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 18:36:33 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 18:36:33 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 18:36:33 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:36:33 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:36:33 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:36:33 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:36:33 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:36:34 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:36:34 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 18:39:52 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:39:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:39:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 18:39:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:39:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:39:52 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:39:52 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:39:52 | INFO     | main:main:272 - Found 3 books on page 1
+2025-09-14 18:43:25 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:43:25 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:43:25 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 18:43:25 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:43:25 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:43:25 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:43:25 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:43:25 | INFO     | main:main:272 - Found 3 books on page 1
+2025-09-14 18:44:38 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:44:38 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:44:38 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:44:38 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:44:38 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 18:44:38 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 18:44:38 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 18:44:38 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:44:38 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:44:38 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:44:38 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:44:38 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 18:44:38 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:44:38 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:44:38 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:44:38 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:44:38 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 18:44:38 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 18:44:38 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 18:44:38 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:44:38 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:44:38 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:44:38 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:44:38 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 18:44:38 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:44:38 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:44:38 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:44:38 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:44:38 | INFO     | main:main:272 - Found 2 books on page 1
+2025-09-14 18:44:38 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 18:44:38 | INFO     | main:main:317 - Total books collected: 2
+2025-09-14 18:44:38 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:44:38 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:44:38 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:44:38 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:44:38 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:44:38 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:44:38 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 18:48:25 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:48:25 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:48:25 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 18:48:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:48:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:48:35 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:48:35 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:48:35 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 18:48:35 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 18:48:35 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 18:48:35 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:48:35 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:48:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:48:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:48:35 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 18:48:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 18:48:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 18:48:35 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 18:48:35 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 18:48:35 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 18:48:35 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 18:48:35 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 18:48:35 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 18:48:35 | SUCCESS  | main:main:323 - Done!
+2025-09-14 18:48:35 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:48:35 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:48:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 18:48:35 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 18:48:35 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 18:48:35 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 18:48:36 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 18:48:36 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 19:01:30 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:01:30 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:01:30 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:04:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:04:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:04:27 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:04:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:04:27 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:04:27 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:04:27 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:04:27 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:04:27 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:04:27 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:04:27 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:04:27 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:04:27 | INFO     | main:main:241 - Found 3 pages of books
+2025-09-14 19:04:27 | INFO     | main:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:04:27 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:04:27 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:04:27 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:04:27 | INFO     | main:main:241 - Found 4 pages of books
+2025-09-14 19:04:27 | INFO     | main:main:253 - Processing page 1/4: https://books.toscrape.com/
+2025-09-14 19:04:27 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:04:27 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:04:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:04:27 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:04:28 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:04:28 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:04:28 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:04:28 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:04:28 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:04:28 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:04:28 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:04:28 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:06:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:06:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:06:14 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:06:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:06:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:06:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:06:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:06:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:06:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:06:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:06:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:06:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:06:14 | INFO     | main:main:241 - Found 3 pages of books
+2025-09-14 19:06:14 | INFO     | main:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:06:14 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:06:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:06:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:06:14 | INFO     | main:main:241 - Found 4 pages of books
+2025-09-14 19:06:14 | INFO     | main:main:253 - Processing page 1/4: https://books.toscrape.com/
+2025-09-14 19:06:14 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:06:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:06:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:06:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:06:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:06:46 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:06:46 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:07:03 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:07:03 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:11:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:11:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:11:35 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:11:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:11:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:11:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:11:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:11:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:11:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:11:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:11:35 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:11:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:11:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:11:35 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:13:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:13:00 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:13:06 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:13:06 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:13:06 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:13:06 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:13:06 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:13:06 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:13:06 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:13:06 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:13:06 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:13:47 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:13:47 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:13:47 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:13:47 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:13:47 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:13:47 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:13:47 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:13:47 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:13:47 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:14:09 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:09 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:09 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:09 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:09 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:09 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:14:09 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:14:09 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:14:09 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:14:16 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:16 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:16 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:16 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:16 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:16 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:14:16 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:14:16 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:14:16 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:14:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:52 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:14:52 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:14:52 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 19:14:52 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 19:14:52 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 19:14:52 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:14:52 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:14:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:52 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 19:14:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:52 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:14:52 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:14:52 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:14:52 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 19:14:52 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 19:14:52 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:14:52 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:14:52 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 19:14:52 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:14:52 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:14:52 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:14:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:14:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:14:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:14:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:14:52 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 19:14:53 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 19:14:53 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 19:16:17 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:16:17 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:16:18 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:16:18 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:16:18 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:18 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:16:19 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:16:19 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:16:19 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:16:19 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:16:26 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:16:26 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:16:26 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:16:26 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:16:26 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:26 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:16:27 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:16:27 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:16:27 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:16:27 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:16:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:35 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:16:35 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:35 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 19:16:35 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 19:16:35 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 19:16:35 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:16:35 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:16:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:35 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 19:16:35 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:35 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:35 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:16:35 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:35 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:16:35 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 19:16:35 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 19:16:35 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:16:35 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:16:35 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:16:35 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:16:35 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:16:35 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:16:35 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:35 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:16:36 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:16:36 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:16:36 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:16:36 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:16:36 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:16:36 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:16:37 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:16:37 | INFO     | __main__:main:246 - Limiting to 3 pages as specified
+2025-09-14 19:16:37 | INFO     | __main__:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:16:37 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:16:38 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:16:38 | INFO     | __main__:main:253 - Processing page 2/3: https://books.toscrape.com/catalogue/page-2.html
+2025-09-14 19:16:39 | INFO     | __main__:main:272 - Found 20 books on page 2
+2025-09-14 19:16:40 | SUCCESS  | __main__:main:315 - Completed processing page 2
+2025-09-14 19:16:40 | INFO     | __main__:main:253 - Processing page 3/3: https://books.toscrape.com/catalogue/page-3.html
+2025-09-14 19:16:40 | INFO     | __main__:main:272 - Found 20 books on page 3
+2025-09-14 19:16:42 | SUCCESS  | __main__:main:315 - Completed processing page 3
+2025-09-14 19:16:42 | INFO     | __main__:main:317 - Total books collected: 60
+2025-09-14 19:16:42 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:16:42 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:16:42 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 19:16:42 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:16:42 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:16:42 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:16:42 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:42 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:42 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:42 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:42 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:42 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:16:42 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:16:42 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:16:42 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 19:16:43 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 19:16:43 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 19:16:50 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:50 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:50 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:16:50 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:50 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 19:16:50 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 19:16:50 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 19:16:50 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:16:50 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:16:50 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:50 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:50 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 19:16:50 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:50 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:50 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:16:50 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:50 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:16:50 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 19:16:50 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 19:16:50 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:16:50 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:16:50 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:16:50 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:16:51 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:16:51 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:16:51 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:16:51 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:16:52 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:16:52 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:16:52 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:16:52 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:16:52 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:16:52 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:16:52 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:16:52 | INFO     | __main__:main:246 - Limiting to 3 pages as specified
+2025-09-14 19:16:52 | INFO     | __main__:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:16:52 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:16:53 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:16:53 | INFO     | __main__:main:253 - Processing page 2/3: https://books.toscrape.com/catalogue/page-2.html
+2025-09-14 19:16:54 | INFO     | __main__:main:272 - Found 20 books on page 2
+2025-09-14 19:16:55 | SUCCESS  | __main__:main:315 - Completed processing page 2
+2025-09-14 19:16:55 | INFO     | __main__:main:253 - Processing page 3/3: https://books.toscrape.com/catalogue/page-3.html
+2025-09-14 19:16:55 | INFO     | __main__:main:272 - Found 20 books on page 3
+2025-09-14 19:16:56 | SUCCESS  | __main__:main:315 - Completed processing page 3
+2025-09-14 19:16:56 | INFO     | __main__:main:317 - Total books collected: 60
+2025-09-14 19:16:56 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:16:56 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:16:57 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 19:16:57 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:16:57 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:16:57 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:16:57 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:57 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:57 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:57 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:57 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:16:57 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:16:57 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 19:16:57 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 19:16:57 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 19:16:58 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 19:16:58 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 19:17:16 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:17:16 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:17:16 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:17:16 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:17:16 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 19:17:16 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 19:17:16 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 19:17:16 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:17:16 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:17:16 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:17:16 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:17:16 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 19:17:16 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:17:16 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:17:16 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:17:16 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:17:16 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:17:16 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 19:17:16 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 19:17:16 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:17:16 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:17:16 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:17:16 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:17:17 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:17:17 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:17:17 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:17:17 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:17:18 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:17:18 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:17:18 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:17:18 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:17:18 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:17:18 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:17:19 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:17:19 | INFO     | __main__:main:246 - Limiting to 3 pages as specified
+2025-09-14 19:17:19 | INFO     | __main__:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:17:19 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:17:20 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:17:20 | INFO     | __main__:main:253 - Processing page 2/3: https://books.toscrape.com/catalogue/page-2.html
+2025-09-14 19:17:20 | INFO     | __main__:main:272 - Found 20 books on page 2
+2025-09-14 19:17:21 | SUCCESS  | __main__:main:315 - Completed processing page 2
+2025-09-14 19:17:21 | INFO     | __main__:main:253 - Processing page 3/3: https://books.toscrape.com/catalogue/page-3.html
+2025-09-14 19:17:22 | INFO     | __main__:main:272 - Found 20 books on page 3
+2025-09-14 19:17:23 | SUCCESS  | __main__:main:315 - Completed processing page 3
+2025-09-14 19:17:23 | INFO     | __main__:main:317 - Total books collected: 60
+2025-09-14 19:17:23 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:17:23 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:17:23 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 19:17:23 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:17:23 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:17:23 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:17:23 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:17:23 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:17:23 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:17:23 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:17:23 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:17:23 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:17:23 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:17:23 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:17:23 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 19:17:24 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 19:17:24 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 19:20:45 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:20:45 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:20:45 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:20:45 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:20:45 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 19:20:45 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 19:20:45 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 19:20:45 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:20:45 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:20:45 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:20:45 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:20:45 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 19:20:45 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:20:45 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:20:45 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:20:45 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:20:45 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:20:45 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 19:20:45 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 19:20:45 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:20:45 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:20:45 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:20:45 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:20:46 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:20:46 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:20:46 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:20:46 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:20:47 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:20:47 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:20:47 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:20:47 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:20:47 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:20:47 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:20:47 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:20:47 | INFO     | __main__:main:246 - Limiting to 3 pages as specified
+2025-09-14 19:20:47 | INFO     | __main__:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:20:47 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:20:48 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:20:48 | INFO     | __main__:main:253 - Processing page 2/3: https://books.toscrape.com/catalogue/page-2.html
+2025-09-14 19:20:49 | INFO     | __main__:main:272 - Found 20 books on page 2
+2025-09-14 19:20:50 | SUCCESS  | __main__:main:315 - Completed processing page 2
+2025-09-14 19:20:50 | INFO     | __main__:main:253 - Processing page 3/3: https://books.toscrape.com/catalogue/page-3.html
+2025-09-14 19:20:50 | INFO     | __main__:main:272 - Found 20 books on page 3
+2025-09-14 19:20:51 | SUCCESS  | __main__:main:315 - Completed processing page 3
+2025-09-14 19:20:51 | INFO     | __main__:main:317 - Total books collected: 60
+2025-09-14 19:20:51 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:20:51 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:20:52 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 19:20:52 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:20:52 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:20:52 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:20:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:20:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:20:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:20:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:20:52 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:20:52 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:20:52 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 19:20:52 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 19:20:52 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 19:21:06 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:06 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:06 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:21:06 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:21:06 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 19:21:06 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 19:21:06 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 19:21:06 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:21:06 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:21:06 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:06 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:06 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 19:21:06 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:06 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:06 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:21:06 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:21:06 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:21:06 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 19:21:06 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 19:21:06 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:21:06 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:21:06 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:21:06 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:21:07 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:21:07 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:21:07 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:21:07 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:21:08 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:21:08 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:21:08 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:21:08 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:21:08 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:21:08 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:21:09 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:21:09 | INFO     | __main__:main:246 - Limiting to 3 pages as specified
+2025-09-14 19:21:09 | INFO     | __main__:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:21:09 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:21:10 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:21:10 | INFO     | __main__:main:253 - Processing page 2/3: https://books.toscrape.com/catalogue/page-2.html
+2025-09-14 19:21:10 | INFO     | __main__:main:272 - Found 20 books on page 2
+2025-09-14 19:21:11 | SUCCESS  | __main__:main:315 - Completed processing page 2
+2025-09-14 19:21:11 | INFO     | __main__:main:253 - Processing page 3/3: https://books.toscrape.com/catalogue/page-3.html
+2025-09-14 19:21:12 | INFO     | __main__:main:272 - Found 20 books on page 3
+2025-09-14 19:21:13 | SUCCESS  | __main__:main:315 - Completed processing page 3
+2025-09-14 19:21:13 | INFO     | __main__:main:317 - Total books collected: 60
+2025-09-14 19:21:13 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:21:13 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:21:13 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:21:13 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:13 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 19:21:13 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:21:13 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:21:13 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:21:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:14 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:14 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:21:14 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 19:21:14 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 19:21:14 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error
+2025-09-14 19:21:22 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:22 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:22 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:21:22 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:21:22 | INFO     | main:main:272 - Found 0 books on page 1
+2025-09-14 19:21:22 | WARNING  | main:main:274 - No books found on page 1!
+2025-09-14 19:21:22 | INFO     | main:main:317 - Total books collected: 0
+2025-09-14 19:21:22 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:21:22 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:21:22 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:22 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:22 | ERROR    | main:main:236 - Failed to fetch first page. Status code: 500
+2025-09-14 19:21:22 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:22 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:22 | INFO     | main:main:241 - Found 1 pages of books
+2025-09-14 19:21:22 | INFO     | main:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:21:22 | INFO     | main:main:272 - Found 1 books on page 1
+2025-09-14 19:21:22 | SUCCESS  | main:main:315 - Completed processing page 1
+2025-09-14 19:21:22 | INFO     | main:main:317 - Total books collected: 1
+2025-09-14 19:21:22 | INFO     | main:main:320 - Saving to JSON...
+2025-09-14 19:21:22 | SUCCESS  | main:main:323 - Done!
+2025-09-14 19:21:22 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:21:22 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:21:22 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:21:22 | INFO     | __main__:main:246 - Limiting to 1 pages as specified
+2025-09-14 19:21:22 | INFO     | __main__:main:253 - Processing page 1/1: https://books.toscrape.com/
+2025-09-14 19:21:22 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:21:23 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:21:23 | INFO     | __main__:main:317 - Total books collected: 20
+2025-09-14 19:21:23 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:21:23 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:21:23 | INFO     | __main__:main:229 - Starting the scraping process...
+2025-09-14 19:21:23 | INFO     | __main__:main:232 - Fetching first page...
+2025-09-14 19:21:24 | INFO     | __main__:main:241 - Found 50 pages of books
+2025-09-14 19:21:24 | INFO     | __main__:main:246 - Limiting to 3 pages as specified
+2025-09-14 19:21:24 | INFO     | __main__:main:253 - Processing page 1/3: https://books.toscrape.com/
+2025-09-14 19:21:24 | INFO     | __main__:main:272 - Found 20 books on page 1
+2025-09-14 19:21:25 | SUCCESS  | __main__:main:315 - Completed processing page 1
+2025-09-14 19:21:25 | INFO     | __main__:main:253 - Processing page 2/3: https://books.toscrape.com/catalogue/page-2.html
+2025-09-14 19:21:26 | INFO     | __main__:main:272 - Found 20 books on page 2
+2025-09-14 19:21:26 | SUCCESS  | __main__:main:315 - Completed processing page 2
+2025-09-14 19:21:26 | INFO     | __main__:main:253 - Processing page 3/3: https://books.toscrape.com/catalogue/page-3.html
+2025-09-14 19:21:27 | INFO     | __main__:main:272 - Found 20 books on page 3
+2025-09-14 19:21:28 | SUCCESS  | __main__:main:315 - Completed processing page 3
+2025-09-14 19:21:28 | INFO     | __main__:main:317 - Total books collected: 60
+2025-09-14 19:21:28 | INFO     | __main__:main:320 - Saving to JSON...
+2025-09-14 19:21:28 | SUCCESS  | __main__:main:323 - Done!
+2025-09-14 19:21:28 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:21:28 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:28 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network error
+2025-09-14 19:21:28 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:21:28 | WARNING  | main:process_book_listing:63 - No book URL found in listing.
+2025-09-14 19:21:28 | WARNING  | main:process_book_listing:93 - No image URL found for book.
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Timeout Test Book: Request timeout after 30 seconds
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for HTTP Error Book: 404 Client Error: Not Found
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Generic Error Book: Unexpected error occurred
+2025-09-14 19:21:29 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:29 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:29 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:29 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:29 | INFO     | main:main:229 - Starting the scraping process...
+2025-09-14 19:21:29 | INFO     | main:main:232 - Fetching first page...
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 400 Book. Status: 400
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 401 Book. Status: 401
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 403 Book. Status: 403
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 404 Book. Status: 404
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 500 Book. Status: 500
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 502 Book. Status: 502
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 503 Book. Status: 503
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP 504 Book. Status: 504
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 1: Intermittent network error
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Book 3: Intermittent network error
+2025-09-14 19:21:29 | WARNING  | main:extract_star_rating:35 - No star rating found for book.
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Encoding Issues Book: 'utf-8' codec can't decode bytes in position 0-0: invalid
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:117 - No detail URL for book: Test Book
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Network unreachable
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Request timeout
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: 404 Not Found
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Test Book: Generic network error
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 404
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for Test Book. Status: 500
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Parsing Error Book: Parsing error
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 400
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 401
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 403
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 404
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 500
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 502
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 503
+2025-09-14 19:21:29 | WARNING  | main:process_book_details:126 - Failed to fetch detail page for HTTP Error Book. Status: 504
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for None Response Book: 'NoneType' object has no attribute 'status'
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for No Status Book: status
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Find All None Book: 'NoneType' object is not iterable
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for CSS Error Book: CSS parsing error
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Breadcrumb Error Book: Breadcrumb parsing error
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Description Error Book: Text strip error
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Table Iteration Error Book: Table iteration error
+2025-09-14 19:21:29 | ERROR    | main:process_book_details:170 - Error processing detail page for Partial Success Book: Breadcrumb error

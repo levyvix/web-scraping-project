@@ -11,7 +11,7 @@ EXPECTED_BASIC_BOOK_DATA = {
     "stock_available": "In stock",
     "star_rating": 3,
     "image_url": "https://books.toscrape.com/media/cache/2c/da/2cdad67c44b002e7ead0cc35693c0e8b.jpg",
-    "detail_url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
+    "detail_url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
 }
 
 # Expected book data after detail processing
@@ -30,7 +30,7 @@ EXPECTED_DETAILED_BOOK_DATA = {
     "availability": "In stock (22 available)",
     "number_of_reviews": "0",
     "description": "It's hard to imagine a world without A Light in the Attic. This now-classic collection of poetry and drawings from Shel Silverstein celebrates its 20th anniversary with this special edition. Silverstein's humorous and creative poems have been beloved by generations of kids and adults. This is a book that families can read together for years to come.",
-    "category": "Poetry"
+    "category": "Poetry",
 }
 
 # Expected data for book with special characters
@@ -49,7 +49,7 @@ EXPECTED_SPECIAL_CHARS_BOOK_DATA = {
     "availability": "In stock (1 available)",
     "number_of_reviews": "5",
     "description": "This book contains special characters like & (ampersand), quotes 'single' and \"double\", and unicode characters: café, résumé, naïve. It's designed to test edge cases in text processing.",
-    "category": "Fiction & Literature"
+    "category": "Fiction & Literature",
 }
 
 # Expected data for incomplete book (missing some fields)
@@ -68,7 +68,7 @@ EXPECTED_INCOMPLETE_BOOK_DATA = {
     "availability": "",
     "number_of_reviews": "",
     "description": "",
-    "category": ""
+    "category": "",
 }
 
 # Sample list of multiple books for testing
@@ -82,7 +82,7 @@ SAMPLE_BOOKS_LIST = [
         "detail_url": "https://example.com/book1",
         "upc": "test123",
         "product_type": "Books",
-        "description": "A test book for unit testing."
+        "description": "A test book for unit testing.",
     },
     {
         "title": "Test Book 2",
@@ -93,7 +93,7 @@ SAMPLE_BOOKS_LIST = [
         "detail_url": "https://example.com/book2",
         "upc": "test456",
         "product_type": "Books",
-        "description": "Another test book for unit testing."
+        "description": "Another test book for unit testing.",
     },
     {
         "title": "Test Book 3 with Very Long Title That Should Be Handled Properly by the JSON Serialization Process",
@@ -104,8 +104,8 @@ SAMPLE_BOOKS_LIST = [
         "detail_url": "https://example.com/very-long-book-url-for-testing",
         "upc": "verylongtest789",
         "product_type": "Books",
-        "description": "A test book with a very long title and description to test edge cases in data processing and JSON serialization. This description contains multiple sentences and should be handled properly by all functions."
-    }
+        "description": "A test book with a very long title and description to test edge cases in data processing and JSON serialization. This description contains multiple sentences and should be handled properly by all functions.",
+    },
 ]
 
 # Star rating test cases
@@ -128,9 +128,21 @@ STAR_RATING_TEST_CASES = [
 # URL generation test cases
 URL_GENERATION_TEST_CASES = [
     ("https://books.toscrape.com/", 1, "https://books.toscrape.com/"),
-    ("https://books.toscrape.com/", 2, "https://books.toscrape.com/catalogue/page-2.html"),
-    ("https://books.toscrape.com/", 10, "https://books.toscrape.com/catalogue/page-10.html"),
-    ("https://books.toscrape.com", 3, "https://books.toscrape.com/catalogue/page-3.html"),  # no trailing slash
+    (
+        "https://books.toscrape.com/",
+        2,
+        "https://books.toscrape.com/catalogue/page-2.html",
+    ),
+    (
+        "https://books.toscrape.com/",
+        10,
+        "https://books.toscrape.com/catalogue/page-10.html",
+    ),
+    (
+        "https://books.toscrape.com",
+        3,
+        "https://books.toscrape.com/catalogue/page-3.html",
+    ),  # no trailing slash
     ("https://example.com/", 5, "https://example.com/catalogue/page-5.html"),
     ("http://localhost:8000/", 2, "http://localhost:8000/catalogue/page-2.html"),
 ]
@@ -181,7 +193,7 @@ EDGE_CASE_DATA = {
         "stock_available": "",
         "star_rating": 0,
         "image_url": "",
-        "detail_url": ""
+        "detail_url": "",
     },
     "null_values": {
         "title": None,
@@ -189,7 +201,7 @@ EDGE_CASE_DATA = {
         "stock_available": None,
         "star_rating": None,
         "image_url": None,
-        "detail_url": None
+        "detail_url": None,
     },
     "very_long_strings": {
         "title": "A" * 1000,  # Very long title
@@ -200,7 +212,7 @@ EDGE_CASE_DATA = {
         "title": "Book with 特殊字符 and émojis 📚",
         "description": "Contains unicode: café, résumé, naïve, and symbols: @#$%^&*()",
         "price": "£19.99",
-    }
+    },
 }
 
 # Mock HTTP status codes for testing

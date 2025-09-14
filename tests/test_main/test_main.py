@@ -60,9 +60,9 @@ def test_save_to_json(tmp_path: str):
 def test_save_to_json_permission_error(mock_open):
     """Test save_to_json handles file permission errors."""
     mock_open.side_effect = PermissionError("Permission denied")
-    
+
     data = [{"name": "John", "age": 30}]
-    
+
     try:
         save_to_json(data, "test.json")
         assert False, "Expected PermissionError to be raised"
@@ -74,9 +74,9 @@ def test_save_to_json_permission_error(mock_open):
 def test_save_to_json_io_error(mock_open):
     """Test save_to_json handles I/O errors."""
     mock_open.side_effect = IOError("Disk full")
-    
+
     data = [{"name": "John", "age": 30}]
-    
+
     try:
         save_to_json(data, "test.json")
         assert False, "Expected IOError to be raised"
@@ -91,10 +91,12 @@ def test_save_to_json_json_serialization_error(mock_open, mock_json_dump):
     mock_file = MagicMock()
     mock_open.return_value.__enter__.return_value = mock_file
     mock_json_dump.side_effect = TypeError("Object is not JSON serializable")
-    
+
     # Create data that would cause JSON serialization issues
-    data = [{"name": "John", "function": lambda x: x}]  # Functions are not JSON serializable
-    
+    data = [
+        {"name": "John", "function": lambda x: x}
+    ]  # Functions are not JSON serializable
+
     try:
         save_to_json(data, "test.json")
         assert False, "Expected TypeError to be raised"
@@ -106,18 +108,18 @@ def test_save_to_json_unicode_encoding(tmp_path):
     """Test save_to_json handles different encoding scenarios."""
     test_output_dir = pathlib.Path(tmp_path) / "test_output"
     test_output_dir.mkdir()
-    
+
     # Test data with unicode characters
     data = [
         {"name": "José", "city": "São Paulo"},
         {"name": "François", "city": "Montréal"},
         {"name": "北京", "city": "中国"},
-        {"emoji": "🚀📚", "special": "åäö"}
+        {"emoji": "🚀📚", "special": "åäö"},
     ]
-    
+
     output_path = test_output_dir / "unicode_test.json"
     save_to_json(data, str(output_path))
-    
+
     # Verify the file exists and content is correct
     assert output_path.exists()
     loaded_data = json.loads(output_path.read_text(encoding="utf-8"))
@@ -128,7 +130,7 @@ def test_save_to_json_large_dataset(tmp_path):
     """Test save_to_json handles large data sets."""
     test_output_dir = pathlib.Path(tmp_path) / "test_output"
     test_output_dir.mkdir()
-    
+
     # Create a large dataset (1000 books with detailed information)
     large_data = []
     for i in range(1000):
@@ -138,13 +140,13 @@ def test_save_to_json_large_dataset(tmp_path):
             "description": f"This is a very long description for book {i}. " * 20,
             "price": f"£{i + 10}.99",
             "categories": [f"Category {j}" for j in range(5)],
-            "reviews": [f"Review {k} for book {i}" for k in range(10)]
+            "reviews": [f"Review {k} for book {i}" for k in range(10)],
         }
         large_data.append(book)
-    
+
     output_path = test_output_dir / "large_dataset.json"
     save_to_json(large_data, str(output_path))
-    
+
     # Verify the file exists and content is correct
     assert output_path.exists()
     loaded_data = json.loads(output_path.read_text(encoding="utf-8"))
@@ -156,12 +158,12 @@ def test_save_to_json_empty_data(tmp_path):
     """Test save_to_json handles empty data."""
     test_output_dir = pathlib.Path(tmp_path) / "test_output"
     test_output_dir.mkdir()
-    
+
     # Test with empty list
     empty_data = []
     output_path = test_output_dir / "empty.json"
     save_to_json(empty_data, str(output_path))
-    
+
     assert output_path.exists()
     loaded_data = json.loads(output_path.read_text(encoding="utf-8"))
     assert loaded_data == []
@@ -171,17 +173,17 @@ def test_save_to_json_none_values(tmp_path):
     """Test save_to_json handles None values in data."""
     test_output_dir = pathlib.Path(tmp_path) / "test_output"
     test_output_dir.mkdir()
-    
+
     # Test data with None values
     data = [
         {"name": "John", "age": None},
         {"name": None, "age": 25},
-        {"name": "Jane", "age": 30, "address": None}
+        {"name": "Jane", "age": 30, "address": None},
     ]
-    
+
     output_path = test_output_dir / "none_values.json"
     save_to_json(data, str(output_path))
-    
+
     assert output_path.exists()
     loaded_data = json.loads(output_path.read_text(encoding="utf-8"))
     assert loaded_data == data
@@ -191,9 +193,9 @@ def test_save_to_json_none_values(tmp_path):
 def test_save_to_json_file_not_found_error(mock_open):
     """Test save_to_json handles FileNotFoundError."""
     mock_open.side_effect = FileNotFoundError("No such file or directory")
-    
+
     data = [{"name": "John", "age": 30}]
-    
+
     try:
         save_to_json(data, "/nonexistent/path/test.json")
         assert False, "Expected FileNotFoundError to be raised"
@@ -316,7 +318,9 @@ def test_extract_star_rating_empty_class():
 
 def test_extract_star_rating_multiple_classes():
     mock_book = MagicMock()
-    mock_book.find.return_value = MagicMock(attrib={"class": "star-rating Three additional-class"})
+    mock_book.find.return_value = MagicMock(
+        attrib={"class": "star-rating Three additional-class"}
+    )
 
     result = extract_star_rating(mock_book)
     assert result == 3
@@ -533,7 +537,10 @@ def test_process_book_listing_various_stock_formats():
         ([" In stock (5 available) "], "In stock (5 available)"),
         ([" Out of stock "], "Out of stock"),
         (["In stock"], "In stock"),
-        ([" Available ", " (10 left) "], "Available  (10 left)"),  # Note: join() preserves spaces
+        (
+            [" Available ", " (10 left) "],
+            "Available  (10 left)",
+        ),  # Note: join() preserves spaces
         ([], ""),
     ]
 
@@ -542,7 +549,10 @@ def test_process_book_listing_various_stock_formats():
 
         # Mock the URL element
         url_element = MagicMock()
-        url_element.attrib = {"href": "test-book_1/index.html", "title": "Test Book Title"}
+        url_element.attrib = {
+            "href": "test-book_1/index.html",
+            "title": "Test Book Title",
+        }
 
         # Mock the price element
         price_element = MagicMock()
@@ -586,7 +596,10 @@ def test_process_book_listing_relative_url():
     with patch("main.extract_star_rating", return_value=3):
         result = process_book_listing(mock_book, "https://example.com/")
 
-        assert result["detail_url"] == "https://example.com/catalogue/test-book_1/index.html"
+        assert (
+            result["detail_url"]
+            == "https://example.com/catalogue/test-book_1/index.html"
+        )
 
 
 def test_process_book_listing_absolute_url():
@@ -595,7 +608,10 @@ def test_process_book_listing_absolute_url():
 
     # Mock the URL element with absolute URL that already contains catalogue
     url_element = MagicMock()
-    url_element.attrib = {"href": "catalogue/test-book_1/index.html", "title": "Test Book Title"}
+    url_element.attrib = {
+        "href": "catalogue/test-book_1/index.html",
+        "title": "Test Book Title",
+    }
 
     # Mock other elements
     price_element = MagicMock()
@@ -609,7 +625,10 @@ def test_process_book_listing_absolute_url():
     with patch("main.extract_star_rating", return_value=3):
         result = process_book_listing(mock_book, "https://example.com/")
 
-        assert result["detail_url"] == "https://example.com/catalogue/test-book_1/index.html"
+        assert (
+            result["detail_url"]
+            == "https://example.com/catalogue/test-book_1/index.html"
+        )
 
 
 def test_process_book_listing_malformed_url():
@@ -642,8 +661,8 @@ def test_process_book_listing_special_characters_in_title():
     # Mock the URL element with special characters in title
     url_element = MagicMock()
     url_element.attrib = {
-        "href": "test-book_1/index.html", 
-        "title": "Test Book: A Story of Love & War (2nd Edition) — Special Characters! @#$%"
+        "href": "test-book_1/index.html",
+        "title": "Test Book: A Story of Love & War (2nd Edition) — Special Characters! @#$%",
     }
 
     # Mock other elements
@@ -658,7 +677,10 @@ def test_process_book_listing_special_characters_in_title():
     with patch("main.extract_star_rating", return_value=3):
         result = process_book_listing(mock_book, "https://example.com/")
 
-        assert result["title"] == "Test Book: A Story of Love & War (2nd Edition) — Special Characters! @#$%"
+        assert (
+            result["title"]
+            == "Test Book: A Story of Love & War (2nd Edition) — Special Characters! @#$%"
+        )
 
 
 def test_process_book_listing_unicode_characters():
@@ -668,8 +690,8 @@ def test_process_book_listing_unicode_characters():
     # Mock the URL element with unicode characters
     url_element = MagicMock()
     url_element.attrib = {
-        "href": "test-book_1/index.html", 
-        "title": "José's Book: São Paulo Adventures 北京 🚀📚"
+        "href": "test-book_1/index.html",
+        "title": "José's Book: São Paulo Adventures 北京 🚀📚",
     }
 
     # Mock other elements
@@ -724,7 +746,7 @@ def test_process_book_listing_missing_image_src():
     price_element = MagicMock()
     price_element.text = "£19.99"
     mock_book.css.return_value = [" In stock "]
-    
+
     # Mock image element without src attribute
     image_element = MagicMock()
     image_element.attrib = {}  # Missing src

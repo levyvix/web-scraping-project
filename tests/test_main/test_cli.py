@@ -626,12 +626,15 @@ class TestMainExecutionFlow:
         with patch("sys.argv", ["main.py"]):
             # Execute the actual __main__ block code
             import argparse
-            
+
             parser = argparse.ArgumentParser(
                 description="Web scraper with multithreading and pagination"
             )
             parser.add_argument(
-                "--threads", type=int, default=10, help="Number of worker threads (default: 10)"
+                "--threads",
+                type=int,
+                default=10,
+                help="Number of worker threads (default: 10)",
             )
             parser.add_argument(
                 "--pages",
@@ -653,12 +656,15 @@ class TestMainExecutionFlow:
         with patch("sys.argv", ["main.py", "--threads", "20", "--pages", "5"]):
             # Execute the actual __main__ block code
             import argparse
-            
+
             parser = argparse.ArgumentParser(
                 description="Web scraper with multithreading and pagination"
             )
             parser.add_argument(
-                "--threads", type=int, default=10, help="Number of worker threads (default: 10)"
+                "--threads",
+                type=int,
+                default=10,
+                help="Number of worker threads (default: 10)",
             )
             parser.add_argument(
                 "--pages",
@@ -677,18 +683,20 @@ class TestMainExecutionFlow:
     def test_main_module_execution_as_script(self, mock_main):
         """Test execution of main module as a script to cover __main__ block."""
         import subprocess
-        import sys
         import os
-        
+
         # Get the path to main.py
-        main_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "main.py")
-        
+        main_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "main.py"
+        )
+
         # Mock the main function to avoid actual execution
-        with patch.dict('sys.modules', {'main': self.main_module}):
+        with patch.dict("sys.modules", {"main": self.main_module}):
             # Execute main.py as a script with default arguments
             try:
                 # Use runpy to execute the module as __main__
                 import runpy
+
                 with patch("sys.argv", ["main.py"]):
                     # This will execute the if __name__ == "__main__": block
                     runpy.run_path(main_path, run_name="__main__")
@@ -708,10 +716,12 @@ class TestMainExecutionFlow:
         """Test execution of main module as a script with arguments."""
         import runpy
         import os
-        
+
         # Get the path to main.py
-        main_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "main.py")
-        
+        main_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "main.py"
+        )
+
         # Execute main.py as a script with custom arguments
         with patch("sys.argv", ["main.py", "--threads", "15", "--pages", "3"]):
             try:

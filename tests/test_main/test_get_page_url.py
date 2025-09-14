@@ -27,7 +27,7 @@ class TestGetPageUrlBasicScenarios:
     def test_various_page_numbers(self):
         """Test URL generation for various page numbers."""
         base_url = "https://books.toscrape.com/"
-        
+
         test_cases = [
             (2, "https://books.toscrape.com/catalogue/page-2.html"),
             (3, "https://books.toscrape.com/catalogue/page-3.html"),
@@ -35,7 +35,7 @@ class TestGetPageUrlBasicScenarios:
             (50, "https://books.toscrape.com/catalogue/page-50.html"),
             (100, "https://books.toscrape.com/catalogue/page-100.html"),
         ]
-        
+
         for page_num, expected_url in test_cases:
             result = get_page_url(base_url, page_num)
             assert result == expected_url, f"Failed for page {page_num}"
@@ -43,13 +43,13 @@ class TestGetPageUrlBasicScenarios:
     def test_large_page_numbers(self):
         """Test URL generation for large page numbers."""
         base_url = "https://books.toscrape.com/"
-        
+
         test_cases = [
             (999, "https://books.toscrape.com/catalogue/page-999.html"),
             (1000, "https://books.toscrape.com/catalogue/page-1000.html"),
             (9999, "https://books.toscrape.com/catalogue/page-9999.html"),
         ]
-        
+
         for page_num, expected_url in test_cases:
             result = get_page_url(base_url, page_num)
             assert result == expected_url, f"Failed for page {page_num}"
@@ -96,7 +96,7 @@ class TestGetPageUrlBaseUrlEdgeCases:
 
     def test_base_url_with_query_parameters(self):
         """Test URL generation with base URL that includes query parameters.
-        
+
         Note: urljoin() doesn't preserve query parameters when joining URLs,
         so they are stripped from the result.
         """
@@ -106,7 +106,7 @@ class TestGetPageUrlBaseUrlEdgeCases:
 
     def test_base_url_with_fragment(self):
         """Test URL generation with base URL that includes fragment.
-        
+
         Note: urljoin() doesn't preserve fragments when joining URLs,
         so they are stripped from the result.
         """
@@ -185,9 +185,9 @@ class TestGetPageUrlConsistency:
         """Test that multiple calls with same parameters return same result."""
         base_url = "https://example.com/"
         page_num = 5
-        
+
         results = [get_page_url(base_url, page_num) for _ in range(10)]
-        
+
         # All results should be identical
         assert all(result == results[0] for result in results)
         assert results[0] == "https://example.com/catalogue/page-5.html"
@@ -195,25 +195,25 @@ class TestGetPageUrlConsistency:
     def test_different_base_urls_different_results(self):
         """Test that different base URLs produce different results."""
         page_num = 2
-        
+
         base_urls = [
             "https://example.com/",
             "https://test.com/",
             "https://books.example.org/",
         ]
-        
+
         results = [get_page_url(base_url, page_num) for base_url in base_urls]
-        
+
         # All results should be different
         assert len(set(results)) == len(results)
 
     def test_sequential_page_numbers(self):
         """Test URL generation for sequential page numbers."""
         base_url = "https://example.com/"
-        
+
         for page_num in range(1, 11):
             result = get_page_url(base_url, page_num)
-            
+
             if page_num == 1:
                 assert result == base_url
             else:
@@ -227,15 +227,15 @@ class TestGetPageUrlRealWorldScenarios:
     def test_books_toscrape_actual_url(self):
         """Test with the actual books.toscrape.com URL."""
         base_url = "https://books.toscrape.com/"
-        
+
         # Test page 1 (should return base URL)
         result_page_1 = get_page_url(base_url, 1)
         assert result_page_1 == "https://books.toscrape.com/"
-        
+
         # Test page 2
         result_page_2 = get_page_url(base_url, 2)
         assert result_page_2 == "https://books.toscrape.com/catalogue/page-2.html"
-        
+
         # Test page 50 (typical pagination scenario)
         result_page_50 = get_page_url(base_url, 50)
         assert result_page_50 == "https://books.toscrape.com/catalogue/page-50.html"
@@ -244,12 +244,24 @@ class TestGetPageUrlRealWorldScenarios:
         """Test common web scraping URL patterns."""
         test_scenarios = [
             ("https://example-bookstore.com/", 1, "https://example-bookstore.com/"),
-            ("https://example-bookstore.com/", 2, "https://example-bookstore.com/catalogue/page-2.html"),
-            ("https://shop.example.com/books/", 3, "https://shop.example.com/books/catalogue/page-3.html"),
+            (
+                "https://example-bookstore.com/",
+                2,
+                "https://example-bookstore.com/catalogue/page-2.html",
+            ),
+            (
+                "https://shop.example.com/books/",
+                3,
+                "https://shop.example.com/books/catalogue/page-3.html",
+            ),
             ("http://localhost:8000/", 1, "http://localhost:8000/"),
-            ("http://localhost:8000/", 4, "http://localhost:8000/catalogue/page-4.html"),
+            (
+                "http://localhost:8000/",
+                4,
+                "http://localhost:8000/catalogue/page-4.html",
+            ),
         ]
-        
+
         for base_url, page_num, expected in test_scenarios:
             result = get_page_url(base_url, page_num)
             assert result == expected, f"Failed for {base_url}, page {page_num}"
@@ -258,12 +270,12 @@ class TestGetPageUrlRealWorldScenarios:
         """Test simulating a typical pagination workflow."""
         base_url = "https://books.toscrape.com/"
         max_pages = 5
-        
+
         urls = []
         for page_num in range(1, max_pages + 1):
             url = get_page_url(base_url, page_num)
             urls.append(url)
-        
+
         # Verify the generated URLs
         expected_urls = [
             "https://books.toscrape.com/",
@@ -272,8 +284,8 @@ class TestGetPageUrlRealWorldScenarios:
             "https://books.toscrape.com/catalogue/page-4.html",
             "https://books.toscrape.com/catalogue/page-5.html",
         ]
-        
+
         assert urls == expected_urls
-        
+
         # Verify no duplicates
         assert len(set(urls)) == len(urls)

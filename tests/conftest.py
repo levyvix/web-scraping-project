@@ -21,7 +21,7 @@ from tests.fixtures.test_data import (
     CLI_ARGUMENT_TEST_CASES,
     EDGE_CASE_DATA,
     HTTP_STATUS_CODES,
-    THREADING_TEST_SCENARIOS
+    THREADING_TEST_SCENARIOS,
 )
 
 from tests.fixtures.mock_responses import (
@@ -31,7 +31,7 @@ from tests.fixtures.mock_responses import (
     MOCK_NO_PAGINATION_INFO,
     MOCK_MALFORMED_PAGINATION,
     MOCK_SPECIAL_CHARACTERS_PAGE,
-    MOCK_SPECIAL_CHARS_DETAIL_PAGE
+    MOCK_SPECIAL_CHARS_DETAIL_PAGE,
 )
 
 
@@ -375,12 +375,12 @@ def mock_adaptor():
 def network_error_scenarios():
     """List of network error scenarios for testing."""
     from requests.exceptions import ConnectionError, Timeout, HTTPError
-    
+
     return [
         ConnectionError("Network unreachable"),
         Timeout("Request timeout"),
         HTTPError("404 Not Found"),
-        Exception("Generic network error")
+        Exception("Generic network error"),
     ]
 
 
@@ -431,33 +431,43 @@ def temp_json_file(temp_dir):
 def mock_book_elements():
     """Create mock book elements for testing process_book_listing."""
     elements = []
-    
+
     # First book element
     book1 = MagicMock()
     url_element1 = MagicMock()
-    url_element1.attrib = {"href": "a-light-in-the-attic_1000/index.html", "title": "A Light in the Attic"}
+    url_element1.attrib = {
+        "href": "a-light-in-the-attic_1000/index.html",
+        "title": "A Light in the Attic",
+    }
     price_element1 = MagicMock()
     price_element1.text = "£51.77"
     image_element1 = MagicMock()
-    image_element1.attrib = {"src": "media/cache/2c/da/2cdad67c44b002e7ead0cc35693c0e8b.jpg"}
-    
+    image_element1.attrib = {
+        "src": "media/cache/2c/da/2cdad67c44b002e7ead0cc35693c0e8b.jpg"
+    }
+
     book1.find.side_effect = [url_element1, price_element1, image_element1]
     book1.css.return_value = [" In stock "]
     elements.append(book1)
-    
+
     # Second book element
     book2 = MagicMock()
     url_element2 = MagicMock()
-    url_element2.attrib = {"href": "tipping-the-velvet_999/index.html", "title": "Tipping the Velvet"}
+    url_element2.attrib = {
+        "href": "tipping-the-velvet_999/index.html",
+        "title": "Tipping the Velvet",
+    }
     price_element2 = MagicMock()
     price_element2.text = "£53.74"
     image_element2 = MagicMock()
-    image_element2.attrib = {"src": "media/cache/26/0c/260c6ae16bce31c8f8c95daddd9f4a1c.jpg"}
-    
+    image_element2.attrib = {
+        "src": "media/cache/26/0c/260c6ae16bce31c8f8c95daddd9f4a1c.jpg"
+    }
+
     book2.find.side_effect = [url_element2, price_element2, image_element2]
     book2.css.return_value = [" In stock "]
     elements.append(book2)
-    
+
     return elements
 
 
@@ -513,7 +523,7 @@ def mock_special_chars_detail_page():
 def mock_scrapling_adaptor():
     """Create a mock Scrapling Adaptor object with common methods."""
     mock_adaptor = MagicMock()
-    
+
     # Mock common methods
     mock_adaptor.find.return_value = None
     mock_adaptor.find_all.return_value = []
@@ -521,25 +531,27 @@ def mock_scrapling_adaptor():
     mock_adaptor.text = ""
     mock_adaptor.attrib = {}
     mock_adaptor.status = 200
-    
+
     return mock_adaptor
 
 
 @pytest.fixture
 def mock_file_operations():
     """Mock file operations for testing."""
-    with patch('builtins.open'), \
-         patch('json.dump'), \
-         patch('json.load'), \
-         patch('pathlib.Path.exists'), \
-         patch('pathlib.Path.mkdir'):
+    with (
+        patch("builtins.open"),
+        patch("json.dump"),
+        patch("json.load"),
+        patch("pathlib.Path.exists"),
+        patch("pathlib.Path.mkdir"),
+    ):
         yield
 
 
 @pytest.fixture
 def mock_network_requests():
     """Mock network requests for testing."""
-    with patch('main.Fetcher.get') as mock_get:
+    with patch("main.Fetcher.get") as mock_get:
         mock_response = MagicMock()
         mock_response.status = 200
         mock_get.return_value = mock_response
@@ -549,15 +561,15 @@ def mock_network_requests():
 @pytest.fixture
 def mock_threading():
     """Mock threading operations for testing."""
-    with patch('concurrent.futures.ThreadPoolExecutor') as mock_executor:
+    with patch("concurrent.futures.ThreadPoolExecutor") as mock_executor:
         # Mock the context manager behavior
         mock_executor_instance = MagicMock()
         mock_executor.return_value.__enter__.return_value = mock_executor_instance
         mock_executor.return_value.__exit__.return_value = None
-        
+
         # Mock submit method to return a future-like object
         mock_future = MagicMock()
         mock_future.result.return_value = {}
         mock_executor_instance.submit.return_value = mock_future
-        
+
         yield mock_executor_instance

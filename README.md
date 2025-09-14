@@ -22,7 +22,7 @@ A modern web scraping project that demonstrates how to extract book information 
    ```bash
    # Install UV if you haven't already
    pip install uv
-   
+
    # Sync dependencies
    uv sync
    ```
@@ -173,7 +173,7 @@ This project includes a `.vscode/launch.json` configuration that makes it easy t
    - Open `.vscode/launch.json`
    - Locate the `args` array in the configuration
    - Add, remove, or modify arguments as needed
-   
+
    For example, to run with different arguments:
    ```json
    "args": ["--threads", "15", "--pages", "3"]
