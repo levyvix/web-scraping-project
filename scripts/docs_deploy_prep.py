@@ -32,7 +32,7 @@ class DocumentationDeploymentPrep:
             Path(output_dir) if output_dir else self.project_root / "dist" / "docs"
         )
         self.skip_tests = skip_tests
-        self.build_report = {
+        self.build_report: Dict[str, Any] = {
             "timestamp": datetime.now().isoformat(),
             "status": "started",
             "steps": [],
@@ -40,7 +40,9 @@ class DocumentationDeploymentPrep:
             "warnings": [],
         }
 
-    def log_step(self, step_name: str, status: str, details: Optional[Dict] = None):
+    def log_step(
+        self, step_name: str, status: str, details: Optional[Dict[str, Any]] = None
+    ) -> None:
         """Log a deployment preparation step."""
         step_info = {
             "name": step_name,
@@ -54,7 +56,7 @@ class DocumentationDeploymentPrep:
             for key, value in details.items():
                 print(f"  {key}: {value}")
 
-    def log_error(self, message: str, details: Optional[Dict] = None):
+    def log_error(self, message: str, details: Optional[Dict[str, Any]] = None) -> None:
         """Log an error during deployment preparation."""
         error_info = {
             "message": message,
@@ -64,7 +66,9 @@ class DocumentationDeploymentPrep:
         self.build_report["errors"].append(error_info)
         print(f"[ERROR] {message}")
 
-    def log_warning(self, message: str, details: Optional[Dict] = None):
+    def log_warning(
+        self, message: str, details: Optional[Dict[str, Any]] = None
+    ) -> None:
         """Log a warning during deployment preparation."""
         warning_info = {
             "message": message,
@@ -76,7 +80,7 @@ class DocumentationDeploymentPrep:
 
     def run_command(
         self, cmd: List[str], timeout: int = 300
-    ) -> subprocess.CompletedProcess:
+    ) -> subprocess.CompletedProcess[str]:
         """Run a command with error handling and logging."""
         try:
             result = subprocess.run(
@@ -405,7 +409,7 @@ class DocumentationDeploymentPrep:
         return success
 
 
-def main():
+def main() -> None:
     """Main entry point for the deployment preparation script."""
     parser = argparse.ArgumentParser(
         description="Prepare documentation for deployment",
