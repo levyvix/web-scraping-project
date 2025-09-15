@@ -1,88 +1,88 @@
-# Web Scraping Project with Scrapling
+# Projeto de Web Scraping com Scrapling
 
-A modern web scraping project that demonstrates how to extract book information from [Books to Scrape](https://books.toscrape.com/) using the Scrapling library.
+Um projeto moderno de raspagem de dados web que demonstra como extrair informações de livros do site [Books to Scrape](https://books.toscrape.com/) utilizando a biblioteca Scrapling.
 
-## 🚀 Technologies
+## 🚀 Tecnologias
 
-- **Python 3.10+** - The core programming language
-- **[Scrapling](https://github.com/levyvix/scrapling)** - A modern, fast, and flexible web scraping library
-- **UV** - A fast Python package installer and resolver
-- **Loguru** - For beautiful and easy logging
-- **tqdm** - For progress bars
+- **Python 3.10+** - A linguagem de programação principal
+- **[Scrapling](https://github.com/levyvix/scrapling)** - Uma biblioteca moderna, rápida e flexível para raspagem de dados web
+- **UV** - Instalador e gerenciador de pacotes Python ultrarrápido
+- **Loguru** - Sistema de registro de logs elegante e intuitivo
+- **tqdm** - Barras de progresso para acompanhamento visual
 
-## 📦 Installation
+## 📦 Instalação
 
-1. **Clone the repository**
+1. **Clone o repositório**
    ```bash
    git clone https://github.com/levyvix/web-scraping-project.git
    cd web-scraping-project
    ```
 
-2. **Install dependencies using UV**
+2. **Instale as dependências usando UV**
    ```bash
-   # Install UV if you haven't already
+   # Instale o UV se ainda não tiver
    pip install uv
 
-   # Sync dependencies
+   # Sincronize as dependências
    uv sync
    ```
 
-   This will install all the required dependencies in a virtual environment.
+   Este comando instalará todas as dependências necessárias em um ambiente virtual isolado.
 
-## 🛠️ Project Structure
+## 🛠️ Estrutura do Projeto
 
 ```
 .
-├── main.py           # Main script containing the web scraping logic
-├── books.json        # Output file with scraped book data
-├── pyproject.toml    # Project dependencies and metadata
-└── README.md         # This file
+├── main.py           # Script principal contendo a lógica de raspagem de dados
+├── books.json        # Arquivo de saída com dados dos livros extraídos
+├── pyproject.toml    # Dependências e metadados do projeto
+└── README.md         # Este arquivo
 ```
 
-## 🚀 Usage
+## 🚀 Uso
 
-### Basic Usage
+### Uso Básico
 
-Run the scraper with default settings (single page, 10 worker threads):
+Execute o raspador com as configurações padrão (uma página, 10 threads de processamento):
 
 ```bash
 uv run main.py
 ```
 
-### Advanced Options
+### Opções Avançadas
 
-The script supports the following command-line arguments:
+O script suporta os seguintes argumentos de linha de comando:
 
-- `--threads`: Number of worker threads to use for concurrent scraping (default: 10)
+- `--threads`: Número de threads de processamento para extração simultânea (padrão: 10)
   ```bash
   uv run main.py --threads 15
   ```
 
-- `--pages`: Maximum number of pages to scrape (default: 1)
+- `--pages`: Número máximo de páginas para processar (padrão: 1)
   ```bash
   uv run main.py --pages 5
   ```
 
-### Examples
+### Exemplos
 
-1. Scrape 3 pages using 15 worker threads:
+1. Extrair dados de 3 páginas utilizando 15 threads de processamento:
    ```bash
    uv run main.py --threads 15 --pages 3
    ```
 
-2. Scrape just the first page with default settings:
+2. Extrair dados apenas da primeira página com as configurações padrão:
    ```bash
    uv run main.py
    ```
 
-3. View help message:
+3. Exibir a mensagem de ajuda:
    ```bash
    uv run main.py --help
    ```
 
-### Output
+### Saída
 
-The scraped data will be saved to `books.json` in the project root directory. The file will contain an array of book objects, each with the following structure:
+Os dados extraídos serão salvos no arquivo `books.json` localizado no diretório raiz do projeto. O arquivo conterá uma lista de objetos representando livros, cada um com a seguinte estrutura:
 
 ```json
 {
@@ -92,110 +92,108 @@ The scraped data will be saved to `books.json` in the project root directory. Th
 }
 ```
 
-## 🔍 About Scrapling
+## 🔍 Sobre o Scrapling
 
-This project uses [Scrapling](https://github.com/levyvix/scrapling), a modern web scraping library that provides:
+Este projeto utiliza [Scrapling](https://github.com/levyvix/scrapling), uma biblioteca moderna para raspagem de dados web que oferece:
 
-- Simple and intuitive API
-- Built-in support for modern web technologies
-- Async/await support
+- Interface de programação (API) simples e intuitiva
+- Suporte nativo para tecnologias web modernas
+- Compatibilidade com programação assíncrona (async/await)
+- Controle de taxa de requisições e tentativas automáticas
+- Suporte completo para seletores CSS e XPath
 
-## 🧪 Testing and Development
+## 🧪 Testes e Desenvolvimento
 
-### Setting Up Development Environment
+### Configuração do Ambiente de Desenvolvimento
 
-1. Install development dependencies:
+1. Instale as dependências de desenvolvimento:
    ```bash
    uv sync --all-groups
    ```
 
-   This will install all development tools including pytest and coverage.
+   Este comando instalará todas as ferramentas necessárias para desenvolvimento, incluindo pytest e ferramentas de cobertura de código.
 
-### Running Tests with Coverage
+### Execução de Testes com Cobertura
 
-To run tests and generate a coverage report:
+Para executar os testes e gerar um relatório de cobertura de código:
 
 ```bash
 uv run pytest --cov=. --cov-report=html
 ```
 
-This command will:
-- Execute all tests in the project
-- Generate code coverage report
-- Create an HTML report in the `htmlcov` directory
+Este comando realizará as seguintes ações:
+- Executar todos os testes do projeto
+- Gerar um relatório detalhado de cobertura de código
+- Criar um relatório HTML interativo no diretório `htmlcov`
 
-You can view the coverage report by opening `htmlcov/index.html` in your web browser.
+Para visualizar o relatório de cobertura, abra o arquivo `htmlcov/index.html` em seu navegador web.
 
-### Test Coverage Requirements
+### Padrões de Cobertura de Testes
 
-The project aims for high test coverage. The coverage report will help identify areas of the code that need more test coverage.
+O projeto busca manter alta cobertura de testes. O relatório de cobertura auxilia na identificação de áreas do código que necessitam de testes adicionais.
 
-## 📝 Contributing
+## 📝 Como Contribuir
 
-1. Fork the repository (`git clone https://github.com/levyvix/web-scraping-project.git`)
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Faça um fork do repositório (`git clone https://github.com/levyvix/web-scraping-project.git`)
+2. Crie uma branch para sua funcionalidade (`git checkout -b feature/nova-funcionalidade`)
+3. Faça commit das suas alterações (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Envie as alterações para sua branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
 
-Please ensure all tests pass and maintain high test coverage before submitting a PR.
-- Built-in rate limiting and retries
-- Support for both CSS and XPath selectors
+Por favor, certifique-se de que todos os testes estejam passando e mantenha a alta cobertura de código antes de submeter um PR.
 
-## 📊 Data Flow
+## 📊 Fluxo de Dados
 
 ```mermaid
 flowchart TD
-    A[Start] --> B[Fetch books.toscrape.com]
+    A[Início] --> B[Acessar books.toscrape.com]
     B --> C{Status 200?}
-    C -->|Yes| D[Find all book elements]
-    C -->|No| E[Log error]
-    D --> F[Extract book data]
-    F --> G[Save to JSON]
-    G --> H[Done]
+    C -->|Sim| D[Localizar elementos de livros]
+    C -->|Não| E[Registrar erro]
+    D --> F[Extrair dados dos livros]
+    F --> G[Salvar em JSON]
+    G --> H[Concluído]
     E --> H
 ```
 
-## 🐛 Debugging with VS Code
+## 🐛 Depuração com VS Code
 
-This project includes a `.vscode/launch.json` configuration that makes it easy to debug the script with different arguments in VS Code.
+Este projeto inclui uma configuração `.vscode/launch.json` que facilita a depuração do script com diferentes parâmetros no VS Code.
 
-### How to Debug with Arguments
+### Como Realizar a Depuração com Argumentos
 
-1. **Open the Debug Panel**
-   - Click on the "Run and Debug" icon in the VS Code sidebar (or press `Ctrl+Shift+D`).
+1. **Abra o Painel de Depuração**
+   - Clique no ícone "Run and Debug" na barra lateral do VS Code (ou pressione `Ctrl+Shift+D`).
 
-2. **Select the Debug Configuration**
-   - Choose "Python: main.py com argumentos" from the dropdown at the top of the Debug panel.
+2. **Selecione a Configuração de Depuração**
+   - Escolha "Python: main.py com argumentos" no menu suspenso no topo do painel de Depuração.
 
-3. **Modify Arguments (Optional)**
-   To change the arguments passed to the script during debugging:
-   - Open `.vscode/launch.json`
-   - Locate the `args` array in the configuration
-   - Add, remove, or modify arguments as needed
+3. **Modifique os Argumentos (Opcional)**
+   Para alterar os parâmetros passados para o script durante a depuração:
+   - Abra o arquivo `.vscode/launch.json`
+   - Localize o array `args` na configuração
+   - Adicione, remova ou modifique argumentos conforme necessário
 
-   For example, to run with different arguments:
+   Por exemplo, para executar com parâmetros diferentes:
    ```json
    "args": ["--threads", "15", "--pages", "3"]
    ```
 
-4. **Start Debugging**
-   - Click the green play button or press `F5` to start debugging with the specified arguments.
+4. **Inicie a Depuração**
+   - Clique no botão verde de execução ou pressione `F5` para iniciar a depuração com os argumentos especificados.
 
-### Common Debugging Scenarios
+### Cenários Comuns de Depuração
 
-- **Basic debugging with default arguments**: Just press `F5`
-- **Debug with different thread count**: Modify the `args` in `launch.json` to `["--threads", "5"]`
-- **Debug with multiple pages**: Set arguments to `["--pages", "3"]` to scrape multiple pages
+- **Depuração básica com argumentos padrão**: Simplesmente pressione `F5`
+- **Depurar com número diferente de threads**: Modifique os `args` em `launch.json` para `["--threads", "5"]`
+- **Depurar com múltiplas páginas**: Configure os argumentos para `["--pages", "3"]` para processar múltiplas páginas
 
-### Breakpoints
+### Pontos de Interrupção (Breakpoints)
 
-You can set breakpoints in your code by clicking in the left margin next to the line numbers. The debugger will pause execution at these points, allowing you to inspect variables and step through your code.
+Você pode definir pontos de interrupção em seu código clicando na margem esquerda ao lado dos números das linhas. O depurador pausará a execução nesses pontos, permitindo que você inspecione variáveis e execute o código passo a passo.
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## 📄 Licença
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.

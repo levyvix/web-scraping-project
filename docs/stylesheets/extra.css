@@ -1,0 +1,181 @@
+/* Enhanced styling for code blocks and syntax highlighting */
+
+/* Custom code block styling */
+.highlight {
+    border-radius: 0.2rem;
+    margin: 1em 0;
+}
+
+.highlight pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+/* Enhanced line numbers styling */
+.highlight .linenodiv {
+    background-color: var(--md-code-bg-color);
+    border-right: 0.1rem solid var(--md-default-fg-color--lightest);
+    padding-right: 0.5rem;
+}
+
+.highlight .linenodiv pre {
+    color: var(--md-default-fg-color--light);
+    text-align: right;
+    padding: 1rem 0.5rem 1rem 1rem;
+}
+
+/* Mermaid diagram styling */
+.mermaid {
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Enhanced admonition styling */
+.md-typeset .admonition {
+    border-radius: 0.2rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Code copy button enhancement */
+.md-typeset .highlight .md-clipboard {
+    color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .highlight .md-clipboard:hover {
+    color: var(--md-accent-fg-color);
+}
+
+/* Enhanced table styling */
+.md-typeset table:not([class]) {
+    border-radius: 0.2rem;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset table:not([class]) th {
+    background-color: var(--md-default-fg-color--lightest);
+    font-weight: 600;
+}
+
+/* Enhanced keyboard key styling */
+.md-typeset .keys kbd {
+    background-color: var(--md-default-bg-color);
+    border: 0.1rem solid var(--md-default-fg-color--lightest);
+    border-radius: 0.2rem;
+    box-shadow: 0 0.1rem 0 var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color);
+    display: inline-block;
+    font-family: var(--md-code-font);
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    vertical-align: text-top;
+}
+
+/* Enhanced task list styling */
+.md-typeset .task-list-item {
+    list-style: none;
+}
+
+.md-typeset .task-list-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Enhanced footnote styling */
+.md-typeset .footnote {
+    color: var(--md-default-fg-color--light);
+    font-size: 0.8rem;
+}
+
+.md-typeset .footnote-backref {
+    color: var(--md-accent-fg-color);
+    text-decoration: none;
+}
+
+/* Enhanced abbreviation styling */
+.md-typeset abbr {
+    border-bottom: 0.1rem dotted var(--md-default-fg-color--light);
+    cursor: help;
+    text-decoration: none;
+}
+
+/* Enhanced mark/highlight styling */
+.md-typeset mark {
+    background-color: var(--md-accent-fg-color--transparent);
+    color: inherit;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.1rem;
+}
+
+/* Enhanced progress bar styling for tqdm-like elements */
+.progress-bar {
+    background-color: var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    height: 1rem;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.progress-bar-fill {
+    background-color: var(--md-accent-fg-color);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+/* Enhanced code annotation styling */
+.md-typeset .md-annotation {
+    background-color: var(--md-accent-fg-color--transparent);
+    border-radius: 0.2rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 500;
+    padding: 0.1rem 0.3rem;
+}
+
+/* Dark mode specific enhancements */
+[data-md-color-scheme="slate"] {
+    --md-code-bg-color: #2d3748;
+    --md-code-fg-color: #e2e8f0;
+}
+
+[data-md-color-scheme="slate"] .highlight {
+    background-color: var(--md-code-bg-color);
+}
+
+[data-md-color-scheme="slate"] .mermaid {
+    filter: invert(0);
+}
+
+/* Responsive enhancements */
+@media screen and (max-width: 76.1875em) {
+    .md-typeset .highlight {
+        margin: 1em -0.8rem;
+        border-radius: 0;
+    }
+
+    .md-typeset .highlight pre {
+        padding: 1rem 0.8rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .mermaid {
+        break-inside: avoid;
+    }
+
+    .highlight {
+        break-inside: avoid;
+    }
+
+    .md-typeset .admonition {
+        break-inside: avoid;
+    }
+}

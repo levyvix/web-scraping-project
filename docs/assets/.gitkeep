@@ -1,0 +1,9 @@
+# Assets Directory
+
+This directory contains static assets for the documentation such as:
+- Images and diagrams
+- CSS files for custom styling
+- JavaScript files for enhanced functionality
+- Other static resources
+
+The .gitkeep file ensures this directory is tracked by Git even when empty.

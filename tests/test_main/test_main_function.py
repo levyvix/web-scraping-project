@@ -10,8 +10,7 @@ This module contains tests for the main function including:
 
 import pytest
 from unittest.mock import MagicMock, patch, call
-from concurrent.futures import ThreadPoolExecutor, Future
-import json
+from concurrent.futures import Future
 from main import main
 
 

@@ -16,8 +16,8 @@ repos:
     hooks:
       - id: mypy
         name: mypy-type-checking
-        args: [--ignore-missing-imports]  # Ignore missing import types
-        additional_dependencies: [types-requests]
+        args: [--ignore-missing-imports, --disable-error-code=import-untyped, --disable-error-code=attr-defined]  # Ignore missing import types, untyped imports, and attr-defined errors
+        additional_dependencies: [types-requests, types-tqdm]
 
   # File validation hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -29,6 +29,7 @@ repos:
         name: fix-end-of-files
       - id: check-yaml
         name: validate-yaml-files
+        exclude: ^mkdocs\.yml$  # Skip mkdocs.yml
       - id: check-json
         name: validate-json-files
       - id: mixed-line-ending

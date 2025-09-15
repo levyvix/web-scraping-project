@@ -77,16 +77,13 @@ def process_book_listing(book: Adaptor, base_url: str) -> Dict[str, Any]:
     price = product_price.text if product_price else ""
 
     # stock available
-    stock = "".join(
-        book.css(
-            "p.instock.availability::text",
-        )
-    ).strip()
+    stock_elements = book.css("p.instock.availability::text")
+    stock = "".join(str(elem) for elem in stock_elements).strip()
 
     # image url
-    image_url = book.find("div.image_container img")
-    if image_url:
-        image_url = image_url.attrib.get("src", "")
+    image_element = book.find("div.image_container img")
+    if image_element:
+        image_url = image_element.attrib.get("src", "")
         # Convert relative URL to absolute URL
         image_url = urljoin(base_url, image_url)
     else:
@@ -133,8 +130,10 @@ def process_book_details(book_data: Dict[str, Any]) -> Dict[str, Any]:
         table_rows = detail_page.find_all("table.table-striped tr")
 
         for row in table_rows:
-            header = "".join(row.css("th::text")).strip()
-            value = "".join(row.css("td::text")).strip()
+            header_elements = row.css("th::text")
+            value_elements = row.css("td::text")
+            header = "".join(str(elem) for elem in header_elements).strip()
+            value = "".join(str(elem) for elem in value_elements).strip()
             product_info[header] = value
 
         # Extract description
@@ -143,11 +142,15 @@ def process_book_details(book_data: Dict[str, Any]) -> Dict[str, Any]:
 
         # Extract category
         breadcrumb = detail_page.find("ul.breadcrumb")
-        category = (
-            "".join(breadcrumb.find_all("li")[2].css("a::text")).strip()
-            if breadcrumb
-            else ""
-        )
+        if breadcrumb:
+            breadcrumb_items = breadcrumb.find_all("li")
+            if len(breadcrumb_items) > 2:
+                category_elements = breadcrumb_items[2].css("a::text")
+                category = "".join(str(elem) for elem in category_elements).strip()
+            else:
+                category = ""
+        else:
+            category = ""
 
         # Update book data with details
         book_data.update(
