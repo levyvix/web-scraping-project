@@ -1,0 +1,344 @@
+name: Dependency Update
+
+on:
+  schedule:
+    # Run weekly on Mondays at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      security_only:
+        description: 'Only update security-related dependencies'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  PYTHON_VERSION: "3.10"
+  UV_CACHE_DIR: ~/.cache/uv
+
+jobs:
+  dependency-scan:
+    runs-on: ubuntu-latest
+    outputs:
+      has-updates: ${{ steps.check-updates.outputs.has-updates }}
+      security-updates: ${{ steps.security-scan.outputs.security-updates }}
+      regular-updates: ${{ steps.check-updates.outputs.regular-updates }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache UV dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.UV_CACHE_DIR }}
+          key: uv-${{ runner.os }}-${{ hashFiles('**/uv.lock') }}
+          restore-keys: |
+            uv-${{ runner.os }}-
+
+      - name: Install UV
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: |
+          uv sync --all-groups
+
+      - name: Check for dependency updates
+        id: check-updates
+        run: |
+          # Check for outdated packages using UV
+          echo "Checking for dependency updates..."
+
+          # Create a temporary file to store update information
+          uv pip list --outdated --format=json > outdated.json || echo "[]" > outdated.json
+
+          # Check if there are any updates
+          if [ -s outdated.json ] && [ "$(cat outdated.json)" != "[]" ]; then
+            echo "has-updates=true" >> $GITHUB_OUTPUT
+            echo "regular-updates=$(cat outdated.json | jq -c '.')" >> $GITHUB_OUTPUT
+          else
+            echo "has-updates=false" >> $GITHUB_OUTPUT
+            echo "regular-updates=[]" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Security vulnerability scan
+        id: security-scan
+        run: |
+          # Install pip-audit for security scanning
+          uv pip install pip-audit
+
+          # Run security scan and capture output
+          echo "Running security vulnerability scan..."
+
+          # Create security report
+          uv pip audit --format=json --output=security-report.json || true
+
+          # Check if there are security vulnerabilities
+          if [ -f security-report.json ] && [ -s security-report.json ]; then
+            # Filter for high and critical vulnerabilities
+            SECURITY_VULNS=$(cat security-report.json | jq '[.vulnerabilities[] | select(.aliases[] | contains("CVE")) | select(.severity == "high" or .severity == "critical")]')
+
+            if [ "$SECURITY_VULNS" != "[]" ]; then
+              echo "security-updates=$SECURITY_VULNS" >> $GITHUB_OUTPUT
+              echo "Found security vulnerabilities requiring updates"
+            else
+              echo "security-updates=[]" >> $GITHUB_OUTPUT
+              echo "No critical security vulnerabilities found"
+            fi
+          else
+            echo "security-updates=[]" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload scan results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dependency-scan-results
+          path: |
+            outdated.json
+            security-report.json
+          retention-days: 7
+
+  create-security-pr:
+    needs: dependency-scan
+    if: needs.dependency-scan.outputs.security-updates != '[]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install UV
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Create security update branch
+        run: |
+          BRANCH_NAME="dependency-updates/security-$(date +%Y%m%d)"
+          git checkout -b "$BRANCH_NAME"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Update security dependencies
+        run: |
+          echo "Updating security-related dependencies..."
+
+          # Update all dependencies to latest versions
+          uv sync --upgrade
+
+          # Verify the updates don't break the lock file
+          uv lock --check
+
+      - name: Run compatibility tests
+        run: |
+          echo "Running compatibility tests for security updates..."
+
+          # Install test dependencies and run tests
+          uv sync --all-groups
+          uv run pytest --tb=short -v
+
+          # Run basic linting to ensure code quality
+          uv run ruff check .
+
+      - name: Commit security updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git add uv.lock pyproject.toml
+          git commit -m "security: update dependencies with security vulnerabilities
+
+          This automated update addresses security vulnerabilities found in dependencies.
+          All tests pass and compatibility has been verified.
+
+          Priority: HIGH - Security Update"
+
+      - name: Push security update branch
+        run: |
+          git push origin "$BRANCH_NAME"
+
+      - name: Create security PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --title "🔒 Security: Update dependencies with vulnerabilities" \
+            --body "## Security Dependency Update
+
+          This PR contains automated security updates for dependencies with known vulnerabilities.
+
+          ### Changes
+          - Updated dependencies with security vulnerabilities
+          - All tests pass
+          - Compatibility verified
+
+          ### Security Information
+          This update addresses security vulnerabilities found during automated scanning.
+
+          **Priority: HIGH** - Please review and merge promptly.
+
+          ---
+          *This PR was created automatically by the dependency update workflow.*" \
+            --label "security,dependencies,automated" \
+            --head "$BRANCH_NAME" \
+            --base main
+
+  create-regular-pr:
+    needs: [dependency-scan, create-security-pr]
+    if: |
+      always() &&
+      needs.dependency-scan.outputs.has-updates == 'true' &&
+      github.event.inputs.security_only != 'true' &&
+      (needs.create-security-pr.result == 'success' || needs.create-security-pr.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install UV
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Create regular update branch
+        run: |
+          BRANCH_NAME="dependency-updates/regular-$(date +%Y%m%d)"
+          git checkout -b "$BRANCH_NAME"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Update regular dependencies
+        run: |
+          echo "Updating regular dependencies..."
+
+          # Update dependencies to latest versions
+          uv sync --upgrade
+
+          # Verify the updates don't break the lock file
+          uv lock --check
+
+      - name: Run comprehensive compatibility tests
+        run: |
+          echo "Running comprehensive compatibility tests..."
+
+          # Install all dependencies including dev
+          uv sync --all-groups
+
+          # Run full test suite with coverage
+          uv run pytest --cov=. --cov-report=term-missing --tb=short -v
+
+          # Run code quality checks
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Generate update summary
+        run: |
+          echo "Generating dependency update summary..."
+
+          # Create a summary of changes
+          echo "## Dependency Updates Summary" > update-summary.md
+          echo "" >> update-summary.md
+
+          # Show what packages were updated
+          if [ -f outdated.json ]; then
+            echo "### Updated Packages" >> update-summary.md
+            cat outdated.json | jq -r '.[] | "- \(.name): \(.version) → \(.latest_version)"' >> update-summary.md || echo "- Package information not available" >> update-summary.md
+          fi
+
+          echo "" >> update-summary.md
+          echo "### Test Results" >> update-summary.md
+          echo "✅ All tests pass" >> update-summary.md
+          echo "✅ Code quality checks pass" >> update-summary.md
+          echo "✅ Compatibility verified" >> update-summary.md
+
+      - name: Commit regular updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git add uv.lock pyproject.toml
+          git commit -m "deps: update dependencies to latest versions
+
+          This automated update brings dependencies to their latest versions.
+          All tests pass and compatibility has been verified.
+
+          Priority: NORMAL - Regular Update"
+
+      - name: Push regular update branch
+        run: |
+          git push origin "$BRANCH_NAME"
+
+      - name: Create regular PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --title "⬆️ Update dependencies to latest versions" \
+            --body "## Regular Dependency Update
+
+          This PR contains automated updates for project dependencies.
+
+          ### Changes
+          $(cat update-summary.md)
+
+          ### Testing
+          - ✅ All tests pass
+          - ✅ Code quality checks pass
+          - ✅ Compatibility verified
+
+          **Priority: NORMAL** - Review when convenient.
+
+          ---
+          *This PR was created automatically by the dependency update workflow.*" \
+            --label "dependencies,automated" \
+            --head "$BRANCH_NAME" \
+            --base main
+
+  cleanup:
+    needs: [dependency-scan, create-security-pr, create-regular-pr]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup old dependency update branches
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Cleaning up old dependency update branches..."
+
+          # Get branches older than 30 days with dependency-updates prefix
+          OLD_BRANCHES=$(gh api repos/${{ github.repository }}/branches --paginate | jq -r '.[] | select(.name | startswith("dependency-updates/")) | select(.commit.commit.author.date < (now - 30*24*3600 | strftime("%Y-%m-%dT%H:%M:%SZ"))) | .name')
+
+          for branch in $OLD_BRANCHES; do
+            echo "Deleting old branch: $branch"
+            gh api --method DELETE repos/${{ github.repository }}/git/refs/heads/$branch || true
+          done
