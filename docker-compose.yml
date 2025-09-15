@@ -1,0 +1,79 @@
+services:
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: book-scraper
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - CONTAINER_ENV=true
+      - LOG_LEVEL=INFO
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    # Default command uses Dockerfile CMD (empty array)
+
+  # Example configuration for high-performance scraping
+  scraper-performance:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: book-scraper-performance
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - CONTAINER_ENV=true
+      - LOG_LEVEL=INFO
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    command: ["--threads", "20", "--pages", "10"]
+    profiles:
+      - performance
+
+  # Example configuration for light scraping
+  scraper-light:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: book-scraper-light
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - CONTAINER_ENV=true
+      - LOG_LEVEL=INFO
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    command: ["--threads", "5", "--pages", "1"]
+    profiles:
+      - light
+
+# Named volumes for persistent data (optional alternative to bind mounts)
+volumes:
+  scraper_output:
+    driver: local
+  scraper_logs:
+    driver: local

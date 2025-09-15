@@ -1,0 +1,20 @@
+# Docker Compose Override for Development
+# This file is automatically loaded by docker-compose and provides
+# development-specific configurations
+
+services:
+  scraper:
+    # Use runtime stage for development (same as production)
+    # Add source code volume for live development
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - .:/app/src:ro  # Read-only source mount for development
+    # Add development environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - DEBUG=1
+    # Enable interactive mode for debugging
+    stdin_open: true
+    tty: true

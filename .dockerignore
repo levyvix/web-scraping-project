@@ -1,0 +1,61 @@
+# Development and IDE files
+.vscode/
+.kiro/
+launch.json
+
+# Version control
+.git/
+.gitignore
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Package management
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Testing and coverage
+tests/
+htmlcov/
+.coverage
+.pytest_cache/
+pytest.ini
+
+# Documentation
+docs/
+site/
+README.md
+*.md
+
+# Build artifacts and distribution
+dist/
+build/
+*.egg-info/
+
+# Logs (keep structure but exclude content)
+logs/*.log
+
+# Output files (will be generated in container)
+books.json
+output/
+
+# Development dependencies and configs
+.pre-commit-config.yaml
+mkdocs.yml
+
+# Scripts (development utilities)
+scripts/
+
+# Lock files (uv.lock will be copied explicitly in Dockerfile)
+# Keep pyproject.toml as it's needed for dependencies
