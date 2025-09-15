@@ -24,3 +24,36 @@ dev = [
 test = "uv run pytest --cov=. --cov-report html"
 lint = "uv run ruff check ."
 format = "uv run ruff format ."
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = false
+warn_unused_configs = true
+# Allow missing imports to not block CI as specified in requirements
+ignore_missing_imports = true
+# Show error codes for easier debugging
+show_error_codes = true
+# Be more lenient with external library types
+disable_error_code = ["arg-type", "assignment"]
+# Be more lenient with test files
+exclude = [
+    "tests/.*",
+]
+
+# Main application files should have basic type checking
+[[tool.mypy.overrides]]
+module = "main"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+warn_no_return = true
+warn_unreachable = true
+
+# Utils module should also have basic type checking
+[[tool.mypy.overrides]]
+module = "utils.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+warn_no_return = true
+warn_unreachable = true

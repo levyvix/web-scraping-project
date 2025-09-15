@@ -48,7 +48,6 @@ jobs:
 
       - name: Run mypy type checking
         run: uv run mypy . --ignore-missing-imports
-        continue-on-error: true
 
   security-scan:
     runs-on: ubuntu-latest
