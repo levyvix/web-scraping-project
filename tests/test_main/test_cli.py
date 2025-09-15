@@ -1,7 +1,6 @@
 """Tests for CLI argument parsing and main execution flow."""
 
 import argparse
-import sys
 from unittest.mock import patch, MagicMock
 import pytest
 from io import StringIO
@@ -682,7 +681,6 @@ class TestMainExecutionFlow:
     @patch("main.main")
     def test_main_module_execution_as_script(self, mock_main):
         """Test execution of main module as a script to cover __main__ block."""
-        import subprocess
         import os
 
         # Get the path to main.py

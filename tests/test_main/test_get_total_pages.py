@@ -3,7 +3,6 @@ Comprehensive tests for the get_total_pages function.
 Tests pagination parsing scenarios, error handling, and edge cases.
 """
 
-import pytest
 from unittest.mock import MagicMock
 from main import get_total_pages
 

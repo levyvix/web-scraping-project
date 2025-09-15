@@ -12,6 +12,10 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.26.0",
+    "pymdown-extensions>=10.11.0",
     "mypy>=1.13.0",
     "pre-commit>=4.0.1",
     "pytest>=8.3.5",
@@ -24,6 +28,11 @@ dev = [
 test = "uv run pytest --cov=. --cov-report html"
 lint = "uv run ruff check ."
 format = "uv run ruff format ."
+docs = "uv run mkdocs serve"
+docs-build = "uv run mkdocs build"
+docs-test = "uv run pytest tests/test_docs/ -v"
+docs-check-links = "uv run pytest tests/test_docs/test_link_checker.py -v"
+docs-deploy-prep = "uv run python scripts/docs_deploy_prep.py"
 
 [tool.mypy]
 python_version = "3.10"

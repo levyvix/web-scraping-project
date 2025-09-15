@@ -5,7 +5,6 @@ This module contains tests covering all URL generation scenarios, edge cases,
 and base URL format variations as specified in task 5.1.
 """
 
-import pytest
 from main import get_page_url
 
 

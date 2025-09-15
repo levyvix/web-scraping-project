@@ -1,0 +1,214 @@
+site_name: "Projeto de Web Scraping com Scrapling"
+site_description: "Documentação completa do projeto de web scraping usando Scrapling - demonstração educacional de técnicas modernas de extração de dados"
+site_author: "Equipe do Projeto Web Scraping"
+site_url: ""
+
+repo_name: "projeto-web-scraping"
+repo_url: ""
+
+theme:
+  name: material
+  language: pt
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Alternar para modo escuro
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Alternar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/spider-web
+    repo: fontawesome/brands/github
+
+nav:
+  - Início: index.md
+  - Guia do Usuário:
+    - Instalação: installation.md
+    - Como Usar: usage.md
+    - Solução de Problemas: troubleshooting.md
+  - Desenvolvimento:
+    - Guia de Desenvolvimento: development.md
+    - Referência da API: api-reference.md
+
+plugins:
+  - search:
+      lang: pt
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_root_toc_entry: false
+            show_signature_annotations: true
+            separate_signature: true
+
+markdown_extensions:
+  # Enhanced code highlighting and syntax
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+      guess_lang: false
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+      base_path: [docs]
+
+  # Enhanced superfences with Mermaid and other diagram support
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: python
+          class: language-python
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: bash
+          class: language-bash
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: shell
+          class: language-shell
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: console
+          class: language-console
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Enhanced content organization
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
+  # Enhanced text formatting and features
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.betterem:
+      smart_enable: all
+
+  # Enhanced admonitions and callouts
+  - admonition
+  - pymdownx.details
+
+  # Enhanced content blocks and formatting
+  - pymdownx.blocks.admonition:
+      types:
+      - new
+      - settings
+      - note
+      - abstract
+      - info
+      - tip
+      - success
+      - question
+      - warning
+      - failure
+      - danger
+      - bug
+      - example
+      - quote
+  - pymdownx.blocks.details
+  - pymdownx.blocks.tab:
+      alternate_style: true
+
+  # Enhanced mathematical expressions
+  - pymdownx.arithmatex:
+      generic: true
+
+  # Enhanced abbreviations and definitions
+  - abbr
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+
+  # Core markdown enhancements
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Link permanente para esta seção
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: ""
+      name: Repositório no GitHub
+  generator: false
+  status:
+    new: Recentemente adicionado
+    deprecated: Descontinuado
+  analytics:
+    feedback:
+      title: Esta página foi útil?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Esta página foi útil
+          data: 1
+          note: >-
+            Obrigado pelo seu feedback!
+        - icon: material/emoticon-sad-outline
+          name: Esta página pode ser melhorada
+          data: 0
+          note: >-
+            Obrigado pelo seu feedback! Ajude-nos a melhorar esta página
+            usando nosso <a href="..." target="_blank" rel="noopener">formulário de feedback</a>.
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/mermaid-config.js
+
+extra_css:
+  - stylesheets/extra.css

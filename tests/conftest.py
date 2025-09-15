@@ -4,10 +4,8 @@ Pytest configuration and shared fixtures for the test suite.
 
 import pytest
 import tempfile
-import json
 from pathlib import Path
 from unittest.mock import MagicMock, patch
-from typing import Dict, List, Any
 
 # Import test data and mock responses
 from tests.fixtures.test_data import (

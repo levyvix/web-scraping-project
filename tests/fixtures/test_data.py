@@ -2,8 +2,6 @@
 Test data fixtures for expected book data structures and test scenarios.
 """
 
-from typing import Dict, List, Any
-
 # Expected book data for basic listing processing
 EXPECTED_BASIC_BOOK_DATA = {
     "title": "A Light in the Attic",

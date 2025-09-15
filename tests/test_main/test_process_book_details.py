@@ -2,20 +2,10 @@
 Comprehensive tests for the process_book_details function.
 """
 
-import pytest
 from unittest.mock import MagicMock, patch
 from requests.exceptions import ConnectionError, Timeout, HTTPError
 
 from main import process_book_details
-from tests.fixtures.mock_responses import (
-    MOCK_COMPLETE_DETAIL_PAGE,
-    MOCK_INCOMPLETE_DETAIL_PAGE,
-    MOCK_NO_DESCRIPTION_DETAIL_PAGE,
-    MOCK_NO_CATEGORY_DETAIL_PAGE,
-    MOCK_MALFORMED_TABLE_DETAIL_PAGE,
-    MOCK_MINIMAL_DETAIL_PAGE,
-    MOCK_SPECIAL_CHARS_DETAIL_PAGE,
-)
 
 
 class TestProcessBookDetailsSuccessScenarios:
