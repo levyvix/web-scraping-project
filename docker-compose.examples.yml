@@ -1,0 +1,105 @@
+# Docker Compose Examples for Book Scraper
+# This file contains various configuration examples for different use cases
+
+services:
+  # Basic scraping with default settings
+  scraper-basic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: book-scraper-basic
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    # Uses default settings: 10 threads, 1 page
+
+  # High-performance scraping configuration
+  scraper-performance:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: book-scraper-performance
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    command: ["--threads", "25", "--pages", "20"]
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '2.0'
+        reservations:
+          memory: 512M
+          cpus: '1.0'
+
+  # Light scraping for testing
+  scraper-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: book-scraper-test
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    command: ["--threads", "3", "--pages", "1"]
+
+  # Development configuration with additional debugging
+  scraper-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder  # Use builder stage for development
+    container_name: book-scraper-dev
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - .:/app/src  # Mount source code for development
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - DEBUG=1
+    command: ["--threads", "5", "--pages", "2"]
+
+  # Production configuration with named volumes
+  scraper-production:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: book-scraper-prod
+    volumes:
+      - scraper_output_prod:/app/output
+      - scraper_logs_prod:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    command: ["--threads", "15", "--pages", "5"]
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+
+# Named volumes for production use
+volumes:
+  scraper_output_prod:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /var/lib/scraper/output
+  scraper_logs_prod:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /var/lib/scraper/logs
