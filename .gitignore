@@ -11,7 +11,8 @@ wheels/
 *.egg
 # Virtual environments
 .venv
-htmlcov
+htmlcov/
+site/
 .ruff_cache
 logs
 *_cache
