@@ -25,10 +25,14 @@ def save_to_json(data: List[Dict[str, Any]], filename: str = "books.json") -> No
     import json
     import os
 
-    # Ensure output directory exists and use it for the output file
-    output_dir = "/app/output"
-    os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, filename)
+    # Use /app/output if it exists (Docker environment), otherwise use current directory
+    if os.path.exists("/app") and os.access("/app", os.W_OK):
+        output_dir = "/app/output"
+        os.makedirs(output_dir, exist_ok=True)
+        output_path = os.path.join(output_dir, filename)
+    else:
+        # For local development and CI environments, use current directory
+        output_path = filename
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
