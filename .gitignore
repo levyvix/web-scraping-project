@@ -19,3 +19,4 @@ logs
 .kiro/
 # Local configuration
 .env
+.vscode
