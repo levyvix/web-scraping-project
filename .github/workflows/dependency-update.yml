@@ -58,7 +58,7 @@ jobs:
           echo "Checking for dependency updates..."
 
           # Create a temporary file to store update information
-          uv pip list --outdated --format=json > outdated.json || echo "[]" > outdated.json
+          uv run pip list --outdated --format=json > outdated.json || echo "[]" > outdated.json
 
           # Check if there are any updates
           if [ -s outdated.json ] && [ "$(cat outdated.json)" != "[]" ]; then
@@ -73,13 +73,13 @@ jobs:
         id: security-scan
         run: |
           # Install pip-audit for security scanning
-          uv pip install pip-audit
+          uv run pip install pip-audit
 
           # Run security scan and capture output
           echo "Running security vulnerability scan..."
 
           # Create security report
-          uv pip audit --format=json --output=security-report.json || true
+          uv run pip audit --format=json --output=security-report.json || true
 
           # Check if there are security vulnerabilities
           if [ -f security-report.json ] && [ -s security-report.json ]; then
