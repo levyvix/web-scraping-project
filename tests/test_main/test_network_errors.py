@@ -88,9 +88,7 @@ def test_main_function_initial_page_connection_error():
     with patch("main.Fetcher.get") as mock_get:
         mock_get.side_effect = ConnectionError("Network unreachable")
 
-        # The main function doesn't catch network errors, they propagate up
-        with pytest.raises(ConnectionError, match="Network unreachable"):
-            main(max_workers=5, max_pages=1)
+        assert main(max_workers=5, max_pages=1) == 1
 
         mock_get.assert_called_once_with(
             "https://books.toscrape.com/", stealthy_headers=True
@@ -102,9 +100,7 @@ def test_main_function_initial_page_timeout():
     with patch("main.Fetcher.get") as mock_get:
         mock_get.side_effect = Timeout("Request timeout")
 
-        # The main function doesn't catch timeout errors, they propagate up
-        with pytest.raises(Timeout, match="Request timeout"):
-            main(max_workers=5, max_pages=1)
+        assert main(max_workers=5, max_pages=1) == 1
 
 
 def test_main_function_initial_page_http_error():
@@ -112,9 +108,7 @@ def test_main_function_initial_page_http_error():
     with patch("main.Fetcher.get") as mock_get:
         mock_get.side_effect = HTTPError("500 Internal Server Error")
 
-        # The main function doesn't catch HTTP errors, they propagate up
-        with pytest.raises(HTTPError, match="500 Internal Server Error"):
-            main(max_workers=5, max_pages=1)
+        assert main(max_workers=5, max_pages=1) == 1
 
 
 @pytest.mark.parametrize("status_code", [400, 401, 403, 404, 500, 502, 503, 504])

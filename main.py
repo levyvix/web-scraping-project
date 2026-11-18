@@ -1,6 +1,7 @@
 from scrapling.fetchers import Fetcher
 from scrapling.parser import Adaptors, Adaptor
 from utils.logger import logger
+from paths import output_directory
 from utils.signal_handler import (
     setup_graceful_shutdown,
     is_shutdown_requested,
@@ -11,7 +12,8 @@ import concurrent.futures
 import re
 import sys
 import os
-from typing import Dict, List, Any
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Sequence
 from urllib.parse import urljoin
 
 
@@ -23,16 +25,13 @@ def save_to_json(data: List[Dict[str, Any]], filename: str = "books.json") -> No
         filename (str, optional): The name of the output file. Defaults to "books.json".
     """
     import json
-    import os
 
-    # Use /app/output if it exists (Docker environment), otherwise use current directory
-    if os.path.exists("/app") and os.access("/app", os.W_OK):
-        output_dir = "/app/output"
-        os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, filename)
+    requested_path = Path(filename)
+    if requested_path.is_absolute() or requested_path.parent != Path("."):
+        output_path = requested_path
     else:
-        # For local development and CI environments, use current directory
-        output_path = filename
+        output_path = output_directory() / requested_path
+        output_path.parent.mkdir(parents=True, exist_ok=True)
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
@@ -74,7 +73,6 @@ def process_book_listing(book: Adaptor, base_url: str) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: The extracted book data.
     """
-    # Extract the book URL for detailed page scraping
     book_url_element = book.find("h3 > a")
     if not book_url_element:
         logger.warning("No book URL found in listing.")
@@ -85,23 +83,17 @@ def process_book_listing(book: Adaptor, base_url: str) -> Dict[str, Any]:
         relative_url = f"catalogue/{relative_url}"
     book_url = urljoin(base_url, relative_url)
 
-    # Extract data from the listing
-    # title
     title = book_url_element.attrib.get("title", "")
 
-    # price
     product_price = book.find("div.product_price > p.price_color")
     price = product_price.text if product_price else ""
 
-    # stock available
     stock_elements = book.css("p.instock.availability::text")
     stock = "".join(str(elem) for elem in stock_elements).strip()
 
-    # image url
     image_element = book.find("div.image_container img")
     if image_element:
         image_url = image_element.attrib.get("src", "")
-        # Convert relative URL to absolute URL
         image_url = urljoin(base_url, image_url)
     else:
         logger.warning("No image URL found for book.")
@@ -132,7 +124,6 @@ def process_book_details(book_data: Dict[str, Any]) -> Dict[str, Any]:
         return book_data
 
     try:
-        # Fetch the detail page
         logger.debug(f"Fetching details for: {book_data.get('title')}")
         detail_page = Fetcher.get(detail_url, stealthy_headers=True)
 
@@ -142,7 +133,6 @@ def process_book_details(book_data: Dict[str, Any]) -> Dict[str, Any]:
             )
             return book_data
 
-        # Extract product information table
         product_info = {}
         table_rows = detail_page.find_all("table.table-striped tr")
 
@@ -153,11 +143,9 @@ def process_book_details(book_data: Dict[str, Any]) -> Dict[str, Any]:
             value = "".join(str(elem) for elem in value_elements).strip()
             product_info[header] = value
 
-        # Extract description
         description_elem = detail_page.find("div#product_description + p")
         description = description_elem.text.strip() if description_elem else ""
 
-        # Extract category
         breadcrumb = detail_page.find("ul.breadcrumb")
         if breadcrumb:
             breadcrumb_items = breadcrumb.find_all("li")
@@ -169,7 +157,6 @@ def process_book_details(book_data: Dict[str, Any]) -> Dict[str, Any]:
         else:
             category = ""
 
-        # Update book data with details
         book_data.update(
             {
                 "upc": product_info.get("UPC", ""),
@@ -203,12 +190,10 @@ def get_total_pages(page: Adaptor, base_url: str) -> int:
     Returns:
         int: The total number of pages.
     """
-    # Try to find the pagination element
     pager = page.find("ul.pager")
     if not pager:
         return 1
 
-    # Look for the "next" button to determine if we're on the last page
     current_page = pager.find("li.current")
     if current_page:
         page_text = current_page.text.strip()
@@ -216,7 +201,6 @@ def get_total_pages(page: Adaptor, base_url: str) -> int:
         if match:
             return int(match.group(2))
 
-    # If we can't determine the total pages, default to 1
     return 1
 
 
@@ -233,7 +217,6 @@ def get_page_url(base_url: str, page_num: int) -> str:
     if page_num == 1:
         return base_url
 
-    # The URL pattern for pages on books.toscrape.com is /catalogue/page-{page_num}.html
     return urljoin(base_url, f"catalogue/page-{page_num}.html")
 
 
@@ -247,10 +230,8 @@ def main(max_workers: int = 10, max_pages: int = 1) -> int:
     Returns:
         int: Exit code (0 for success, non-zero for failure)
     """
-    # Set up graceful shutdown handling
     setup_graceful_shutdown()
 
-    # Track active futures for cleanup
     active_futures: List[concurrent.futures.Future[Any]] = []
 
     def cleanup_futures():
@@ -263,18 +244,43 @@ def main(max_workers: int = 10, max_pages: int = 1) -> int:
 
     add_cleanup_callback(cleanup_futures)
 
+    def process_concurrently(
+        items: Sequence[Any],
+        operation: Callable[[Any], Any],
+        description: str,
+    ) -> list[Any]:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = [executor.submit(operation, item) for item in items]
+            active_futures.extend(futures)
+            results = []
+            for future in tqdm(
+                concurrent.futures.as_completed(futures),
+                desc=description,
+                total=len(items),
+            ):
+                if is_shutdown_requested():
+                    logger.info(f"Shutdown requested during {description}")
+                    break
+                try:
+                    results.append(future.result())
+                except Exception as e:
+                    logger.error(f"Error during {description}: {e}")
+
+            active_futures[:] = [
+                future for future in active_futures if not future.done()
+            ]
+            return results
+
     base_url = "https://books.toscrape.com/"
 
     logger.info("Starting the scraping process...")
     logger.info(f"Configuration: max_workers={max_workers}, max_pages={max_pages}")
 
     try:
-        # Check for shutdown before starting
         if is_shutdown_requested():
             logger.info("Shutdown requested before starting, exiting gracefully")
             return 0
 
-        # Fetch the first page to determine total pages
         logger.info("Fetching first page...")
         first_page = Fetcher.get(base_url, stealthy_headers=True)
 
@@ -282,22 +288,18 @@ def main(max_workers: int = 10, max_pages: int = 1) -> int:
             logger.error(
                 f"Failed to fetch first page. Status code: {first_page.status}"
             )
-            return 1  # Return error exit code
+            return 1
 
-        # Determine total number of pages
         total_pages = get_total_pages(first_page, base_url)
         logger.info(f"Found {total_pages} pages of books")
 
-        # Limit pages if max_pages is specified
         if max_pages and total_pages > max_pages:
             total_pages = max_pages
             logger.info(f"Limiting to {max_pages} pages as specified")
 
         all_books = []
 
-        # Process each page
         for page_num in range(1, total_pages + 1):
-            # Check for shutdown signal
             if is_shutdown_requested():
                 logger.info(
                     f"Shutdown requested while processing page {page_num}, stopping gracefully"
@@ -307,7 +309,6 @@ def main(max_workers: int = 10, max_pages: int = 1) -> int:
             page_url = get_page_url(base_url, page_num)
             logger.info(f"Processing page {page_num}/{total_pages}: {page_url}")
 
-            # Fetch the page
             if page_num == 1:
                 page = first_page  # Reuse the first page we already fetched
             else:
@@ -323,7 +324,6 @@ def main(max_workers: int = 10, max_pages: int = 1) -> int:
                     )
                     continue
 
-            # Extract books from the page
             books: Adaptors = page.find_all(
                 "li", {"class": "col-xs-6 col-sm-4 col-md-3 col-lg-3"}
             )
@@ -333,79 +333,29 @@ def main(max_workers: int = 10, max_pages: int = 1) -> int:
                 logger.warning(f"No books found on page {page_num}!")
                 continue
 
-            # Process book listings in parallel
-            with concurrent.futures.ThreadPoolExecutor(
-                max_workers=max_workers
-            ) as executor:
-                # Create a list of futures for processing book listings
-                listing_futures = [
-                    executor.submit(process_book_listing, book, base_url)
-                    for book in books
-                ]
-                active_futures.extend(listing_futures)
+            page_books = process_concurrently(
+                books,
+                lambda book: process_book_listing(book, base_url),
+                f"Extracting listings from page {page_num}",
+            )
+            page_books = [book for book in page_books if book]
 
-                # Process results as they complete
-                page_books: list[Dict[str, Any]] = []
-                for future in tqdm(
-                    concurrent.futures.as_completed(listing_futures),
-                    desc=f"Extracting listings from page {page_num}",
-                    total=len(books),
-                ):
-                    if is_shutdown_requested():
-                        logger.info("Shutdown requested during listing processing")
-                        break
-                    try:
-                        result = future.result()
-                        if result:
-                            page_books.append(result)
-                    except Exception as e:
-                        logger.error(f"Error processing book listing: {e}")
-
-                # Remove completed futures from active list
-                active_futures = [f for f in active_futures if not f.done()]
-
-            # Check for shutdown before detail processing
             if is_shutdown_requested():
                 logger.info("Shutdown requested before detail processing")
                 break
 
-            # Process book details in parallel
-            with concurrent.futures.ThreadPoolExecutor(
-                max_workers=max_workers
-            ) as executor:
-                # Create a list of futures for processing book details
-                detail_futures = [
-                    executor.submit(process_book_details, book_data)
-                    for book_data in page_books
-                ]
-                active_futures.extend(detail_futures)
+            processed_books = process_concurrently(
+                page_books,
+                process_book_details,
+                f"Fetching details for page {page_num} books",
+            )
 
-                # Process results as they complete
-                processed_books = []
-                for future in tqdm(
-                    concurrent.futures.as_completed(detail_futures),
-                    desc=f"Fetching details for page {page_num} books",
-                    total=len(page_books),
-                ):
-                    if is_shutdown_requested():
-                        logger.info("Shutdown requested during detail processing")
-                        break
-                    try:
-                        processed_books.append(future.result())
-                    except Exception as e:
-                        logger.error(f"Error processing book details: {e}")
-
-                # Remove completed futures from active list
-                active_futures = [f for f in active_futures if not f.done()]
-
-            # Add books from this page to the overall collection
             all_books.extend(processed_books)
 
             logger.success(f"Completed processing page {page_num}")
 
         logger.info(f"Total books collected: {len(all_books)}")
 
-        # Save all books to JSON if we have any data
         if all_books:
             logger.info("Saving to JSON...")
             save_to_json(all_books)
@@ -415,7 +365,7 @@ def main(max_workers: int = 10, max_pages: int = 1) -> int:
 
         if is_shutdown_requested():
             logger.info("Scraping stopped due to shutdown request")
-            return 0  # Graceful shutdown is still success
+            return 0
         else:
             logger.success("Scraping completed successfully!")
             return 0
@@ -446,7 +396,6 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # Set container environment variable for logging
     os.environ.setdefault("CONTAINER_ENV", "true")
 
     try:

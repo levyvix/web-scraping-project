@@ -465,15 +465,11 @@ class TestMainExecutionFlow:
         mock_fetcher_get.return_value = mock_first_page
 
         # Execute main function with minimal parameters
-        self.main_module.main(max_workers=1, max_pages=1)
+        assert self.main_module.main(max_workers=1, max_pages=1) == 0
 
         # Verify the expected calls were made
         mock_fetcher_get.assert_called()
-        mock_save_to_json.assert_called_once()
-
-        # Verify save_to_json was called with empty list (no books found)
-        args, kwargs = mock_save_to_json.call_args
-        assert args[0] == []  # Empty list of books
+        mock_save_to_json.assert_not_called()
 
     @patch("main.Fetcher.get")
     def test_end_to_end_execution_flow_with_network_error(self, mock_fetcher_get):
@@ -483,9 +479,7 @@ class TestMainExecutionFlow:
         mock_first_page.status = 500  # Server error
         mock_fetcher_get.return_value = mock_first_page
 
-        # Execute main function and expect exception
-        with pytest.raises(Exception, match="Failed to fetch first page"):
-            self.main_module.main(max_workers=1, max_pages=1)
+        assert self.main_module.main(max_workers=1, max_pages=1) == 1
 
         # Verify the network call was made
         mock_fetcher_get.assert_called_once()

@@ -41,6 +41,7 @@ COPY --from=builder --chown=scraper:scraper /app/.venv /app/.venv
 # Copy application code
 COPY --chown=scraper:scraper main.py ./
 COPY --chown=scraper:scraper healthcheck.py ./
+COPY --chown=scraper:scraper paths.py ./
 COPY --chown=scraper:scraper utils/ ./utils/
 
 # Create volume mount points with proper permissions
