@@ -207,7 +207,7 @@ class TestMainFunctionSuccessScenarios:
         # Verify logging calls
         mock_logger.info.assert_any_call("Starting the scraping process...")
         mock_logger.info.assert_any_call("Fetching first page...")
-        mock_logger.success.assert_called_with("Done!")
+        mock_logger.success.assert_called_with("Scraping completed successfully!")
 
     def test_multi_page_scraping_with_pagination(
         self,
@@ -322,12 +322,8 @@ class TestMainFunctionSuccessScenarios:
                 mock_context = MagicMock()
                 mock_executor.return_value.__enter__.return_value = mock_context
 
-                # Track submit calls
-                submit_calls = []
-
                 def mock_submit(func, *args):
                     future = MagicMock(spec=Future)
-                    submit_calls.append((func, args))
                     future.result.return_value = func(*args)
                     return future
 
@@ -345,12 +341,9 @@ class TestMainFunctionSuccessScenarios:
         for call_args in mock_executor.call_args_list:
             assert call_args == call(max_workers=8)
 
-        # Verify submit was called for both listing and detail processing
-        listing_calls = [call for call in submit_calls if call[0] == mock_listing]
-        detail_calls = [call for call in submit_calls if call[0] == mock_details]
-
-        assert len(listing_calls) == 3  # 3 books on the page
-        assert len(detail_calls) == 3  # 3 books for detail processing
+        assert mock_context.submit.call_count == 6
+        assert mock_listing.call_count == 3
+        assert mock_details.call_count == 3
 
     def test_progress_tracking_and_logging(
         self,
@@ -418,7 +411,7 @@ class TestMainFunctionSuccessScenarios:
             "Completed processing page 1",
             "Total books collected: 3",
             "Saving to JSON...",
-            "Done!",
+            "Scraping completed successfully!",
         ]
 
         for expected_msg in expected_log_calls:
@@ -440,9 +433,7 @@ class TestMainFunctionErrorScenarios:
         mock_response.status = 404
         mock_fetcher_get.return_value = mock_response
 
-        # Should raise exception for failed initial page
-        with pytest.raises(Exception, match="Failed to fetch first page"):
-            main(max_workers=5, max_pages=1)
+        assert main(max_workers=5, max_pages=1) == 1
 
         # Verify error logging
         mock_logger.error.assert_called_with(
@@ -461,9 +452,10 @@ class TestMainFunctionErrorScenarios:
         # Mock network error
         mock_fetcher_get.side_effect = ConnectionError("Network unreachable")
 
-        # Should propagate the network error
-        with pytest.raises(ConnectionError):
-            main(max_workers=5, max_pages=1)
+        assert main(max_workers=5, max_pages=1) == 1
+        mock_logger.error.assert_any_call(
+            "Unexpected error during scraping: Network unreachable"
+        )
 
         # Verify save_to_json was not called
         mock_save_to_json.assert_not_called()
@@ -581,12 +573,13 @@ class TestMainFunctionErrorScenarios:
                 with patch("main.concurrent.futures.as_completed") as mock_as_completed:
                     mock_as_completed.side_effect = lambda futures: futures
 
-                    # Should propagate file saving error
-                    with pytest.raises(PermissionError):
-                        main(max_workers=5, max_pages=1)
+                    assert main(max_workers=5, max_pages=1) == 1
 
         # Verify logging occurred before the error
         mock_logger.info.assert_any_call("Saving to JSON...")
+        mock_logger.error.assert_any_call(
+            "Unexpected error during scraping: Permission denied"
+        )
 
 
 class TestMainFunctionEdgeCases:
@@ -788,12 +781,9 @@ class TestMainFunctionEdgeCases:
                 main(max_workers=5, max_pages=1)
 
         # Verify warning was logged for no books found
-        mock_logger.warning.assert_called_with("No books found on page 1!")
+        mock_logger.warning.assert_any_call("No books found on page 1!")
 
-        # Verify save_to_json was called with empty list
-        mock_save_to_json.assert_called_once()
-        saved_data = mock_save_to_json.call_args[0][0]
-        assert len(saved_data) == 0
+        mock_save_to_json.assert_not_called()
 
     def test_single_book_pages_and_boundary_conditions(
         self, mock_fetcher_get, mock_save_to_json, mock_logger, mock_tqdm

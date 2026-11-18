@@ -7,21 +7,16 @@ This script verifies that the application is healthy and ready to process reques
 import sys
 import json
 import importlib.util
-from pathlib import Path
 from datetime import datetime, timedelta
 import requests
 from typing import Dict, Any
+from paths import output_directory, logs_directory
 
 
 def check_output_directory() -> bool:
     """Check if output directory is writable."""
     try:
-        # Check container path first, then local path
-        if Path("/app/output").exists():
-            output_dir = Path("/app/output")
-        else:
-            output_dir = Path("./output")
-
+        output_dir = output_directory()
         output_dir.mkdir(exist_ok=True)
         test_file = output_dir / ".health_check"
         test_file.write_text("health_check")
@@ -34,12 +29,7 @@ def check_output_directory() -> bool:
 def check_logs_directory() -> bool:
     """Check if logs directory is writable."""
     try:
-        # Check container path first, then local path
-        if Path("/app/logs").exists():
-            logs_dir = Path("/app/logs")
-        else:
-            logs_dir = Path("./logs")
-
+        logs_dir = logs_directory()
         logs_dir.mkdir(exist_ok=True)
         test_file = logs_dir / ".health_check"
         test_file.write_text("health_check")
@@ -72,15 +62,10 @@ def check_target_website() -> bool:
 def check_recent_activity() -> bool:
     """Check if there's been recent scraping activity (optional check)."""
     try:
-        # Check container path first, then local path
-        if Path("/app/output/books.json").exists():
-            output_file = Path("/app/output/books.json")
-        elif Path("./output/books.json").exists():
-            output_file = Path("./output/books.json")
-        else:
+        output_file = output_directory() / "books.json"
+        if not output_file.exists():
             return True  # No output yet is okay
 
-        # Check if file was modified in the last 24 hours (indicates recent activity)
         file_mtime = datetime.fromtimestamp(output_file.stat().st_mtime)
         twenty_four_hours_ago = datetime.now() - timedelta(hours=24)
         return file_mtime > twenty_four_hours_ago
@@ -113,10 +98,8 @@ def main() -> int:
     try:
         result = run_health_check()
 
-        # Print result as JSON for container orchestration tools
         print(json.dumps(result, indent=2))
 
-        # Return appropriate exit code
         return 0 if result["overall"] else 1
 
     except Exception as e:
